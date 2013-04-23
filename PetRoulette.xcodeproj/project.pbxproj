@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED9263111726DE6600569E0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263101726DE6600569E0F /* UIKit.framework */; };
+		ED9263131726DE6600569E0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263121726DE6600569E0F /* Foundation.framework */; };
+		ED9263151726DE6600569E0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263141726DE6600569E0F /* CoreGraphics.framework */; };
+		ED92631B1726DE6600569E0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED9263191726DE6600569E0F /* InfoPlist.strings */; };
+		ED92631D1726DE6600569E0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED92631C1726DE6600569E0F /* main.m */; };
+		ED9263211726DE6600569E0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263201726DE6600569E0F /* AppDelegate.m */; };
+		ED9263231726DE6600569E0F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9263221726DE6600569E0F /* Default.png */; };
+		ED9263251726DE6600569E0F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9263241726DE6600569E0F /* Default@2x.png */; };
+		ED9263271726DE6600569E0F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9263261726DE6600569E0F /* Default-568h@2x.png */; };
+		ED92632A1726DE6600569E0F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9263281726DE6600569E0F /* MainStoryboard_iPhone.storyboard */; };
+		ED92632D1726DE6600569E0F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED92632B1726DE6600569E0F /* MainStoryboard_iPad.storyboard */; };
+		ED9263301726DE6600569E0F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED92632F1726DE6600569E0F /* ViewController.m */; };
+		ED9263381726DE6600569E0F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263371726DE6600569E0F /* SenTestingKit.framework */; };
+		ED9263391726DE6600569E0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263101726DE6600569E0F /* UIKit.framework */; };
+		ED92633A1726DE6600569E0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263121726DE6600569E0F /* Foundation.framework */; };
+		ED9263421726DE6600569E0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED9263401726DE6600569E0F /* InfoPlist.strings */; };
+		ED9263451726DE6600569E0F /* PetRouletteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263441726DE6600569E0F /* PetRouletteTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED92633B1726DE6600569E0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED9263051726DE6600569E0F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED92630C1726DE6600569E0F;
+			remoteInfo = PetRoulette;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED92630D1726DE6600569E0F /* PetRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9263101726DE6600569E0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ED9263121726DE6600569E0F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ED9263141726DE6600569E0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ED9263181726DE6600569E0F /* PetRoulette-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PetRoulette-Info.plist"; sourceTree = "<group>"; };
+		ED92631A1726DE6600569E0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ED92631C1726DE6600569E0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ED92631E1726DE6600569E0F /* PetRoulette-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PetRoulette-Prefix.pch"; sourceTree = "<group>"; };
+		ED92631F1726DE6600569E0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ED9263201726DE6600569E0F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ED9263221726DE6600569E0F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		ED9263241726DE6600569E0F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		ED9263261726DE6600569E0F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		ED9263291726DE6600569E0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		ED92632C1726DE6600569E0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		ED92632E1726DE6600569E0F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ED92632F1726DE6600569E0F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ED9263361726DE6600569E0F /* PetRouletteTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetRouletteTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9263371726DE6600569E0F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		ED92633F1726DE6600569E0F /* PetRouletteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PetRouletteTests-Info.plist"; sourceTree = "<group>"; };
+		ED9263411726DE6600569E0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ED9263431726DE6600569E0F /* PetRouletteTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetRouletteTests.h; sourceTree = "<group>"; };
+		ED9263441726DE6600569E0F /* PetRouletteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetRouletteTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED92630A1726DE6600569E0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9263111726DE6600569E0F /* UIKit.framework in Frameworks */,
+				ED9263131726DE6600569E0F /* Foundation.framework in Frameworks */,
+				ED9263151726DE6600569E0F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED9263321726DE6600569E0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9263381726DE6600569E0F /* SenTestingKit.framework in Frameworks */,
+				ED9263391726DE6600569E0F /* UIKit.framework in Frameworks */,
+				ED92633A1726DE6600569E0F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED9263041726DE6600569E0F = {
+			isa = PBXGroup;
+			children = (
+				ED9263161726DE6600569E0F /* PetRoulette */,
+				ED92633D1726DE6600569E0F /* PetRouletteTests */,
+				ED92630F1726DE6600569E0F /* Frameworks */,
+				ED92630E1726DE6600569E0F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED92630E1726DE6600569E0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED92630D1726DE6600569E0F /* PetRoulette.app */,
+				ED9263361726DE6600569E0F /* PetRouletteTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED92630F1726DE6600569E0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED9263101726DE6600569E0F /* UIKit.framework */,
+				ED9263121726DE6600569E0F /* Foundation.framework */,
+				ED9263141726DE6600569E0F /* CoreGraphics.framework */,
+				ED9263371726DE6600569E0F /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED9263161726DE6600569E0F /* PetRoulette */ = {
+			isa = PBXGroup;
+			children = (
+				ED92631F1726DE6600569E0F /* AppDelegate.h */,
+				ED9263201726DE6600569E0F /* AppDelegate.m */,
+				ED9263281726DE6600569E0F /* MainStoryboard_iPhone.storyboard */,
+				ED92632B1726DE6600569E0F /* MainStoryboard_iPad.storyboard */,
+				ED92632E1726DE6600569E0F /* ViewController.h */,
+				ED92632F1726DE6600569E0F /* ViewController.m */,
+				ED9263171726DE6600569E0F /* Supporting Files */,
+			);
+			path = PetRoulette;
+			sourceTree = "<group>";
+		};
+		ED9263171726DE6600569E0F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED9263181726DE6600569E0F /* PetRoulette-Info.plist */,
+				ED9263191726DE6600569E0F /* InfoPlist.strings */,
+				ED92631C1726DE6600569E0F /* main.m */,
+				ED92631E1726DE6600569E0F /* PetRoulette-Prefix.pch */,
+				ED9263221726DE6600569E0F /* Default.png */,
+				ED9263241726DE6600569E0F /* Default@2x.png */,
+				ED9263261726DE6600569E0F /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED92633D1726DE6600569E0F /* PetRouletteTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED9263431726DE6600569E0F /* PetRouletteTests.h */,
+				ED9263441726DE6600569E0F /* PetRouletteTests.m */,
+				ED92633E1726DE6600569E0F /* Supporting Files */,
+			);
+			path = PetRouletteTests;
+			sourceTree = "<group>";
+		};
+		ED92633E1726DE6600569E0F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED92633F1726DE6600569E0F /* PetRouletteTests-Info.plist */,
+				ED9263401726DE6600569E0F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED92630C1726DE6600569E0F /* PetRoulette */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED9263481726DE6600569E0F /* Build configuration list for PBXNativeTarget "PetRoulette" */;
+			buildPhases = (
+				ED9263091726DE6600569E0F /* Sources */,
+				ED92630A1726DE6600569E0F /* Frameworks */,
+				ED92630B1726DE6600569E0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PetRoulette;
+			productName = PetRoulette;
+			productReference = ED92630D1726DE6600569E0F /* PetRoulette.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED9263351726DE6600569E0F /* PetRouletteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED92634B1726DE6600569E0F /* Build configuration list for PBXNativeTarget "PetRouletteTests" */;
+			buildPhases = (
+				ED9263311726DE6600569E0F /* Sources */,
+				ED9263321726DE6600569E0F /* Frameworks */,
+				ED9263331726DE6600569E0F /* Resources */,
+				ED9263341726DE6600569E0F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED92633C1726DE6600569E0F /* PBXTargetDependency */,
+			);
+			name = PetRouletteTests;
+			productName = PetRouletteTests;
+			productReference = ED9263361726DE6600569E0F /* PetRouletteTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED9263051726DE6600569E0F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "IGPROJ-MAC01";
+			};
+			buildConfigurationList = ED9263081726DE6600569E0F /* Build configuration list for PBXProject "PetRoulette" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ED9263041726DE6600569E0F;
+			productRefGroup = ED92630E1726DE6600569E0F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED92630C1726DE6600569E0F /* PetRoulette */,
+				ED9263351726DE6600569E0F /* PetRouletteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED92630B1726DE6600569E0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED92631B1726DE6600569E0F /* InfoPlist.strings in Resources */,
+				ED9263231726DE6600569E0F /* Default.png in Resources */,
+				ED9263251726DE6600569E0F /* Default@2x.png in Resources */,
+				ED9263271726DE6600569E0F /* Default-568h@2x.png in Resources */,
+				ED92632A1726DE6600569E0F /* MainStoryboard_iPhone.storyboard in Resources */,
+				ED92632D1726DE6600569E0F /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED9263331726DE6600569E0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9263421726DE6600569E0F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ED9263341726DE6600569E0F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED9263091726DE6600569E0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED92631D1726DE6600569E0F /* main.m in Sources */,
+				ED9263211726DE6600569E0F /* AppDelegate.m in Sources */,
+				ED9263301726DE6600569E0F /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED9263311726DE6600569E0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9263451726DE6600569E0F /* PetRouletteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED92633C1726DE6600569E0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED92630C1726DE6600569E0F /* PetRoulette */;
+			targetProxy = ED92633B1726DE6600569E0F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED9263191726DE6600569E0F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED92631A1726DE6600569E0F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ED9263281726DE6600569E0F /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED9263291726DE6600569E0F /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		ED92632B1726DE6600569E0F /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED92632C1726DE6600569E0F /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		ED9263401726DE6600569E0F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED9263411726DE6600569E0F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED9263461726DE6600569E0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED9263471726DE6600569E0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED9263491726DE6600569E0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PetRoulette/PetRoulette-Prefix.pch";
+				INFOPLIST_FILE = "PetRoulette/PetRoulette-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ED92634A1726DE6600569E0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PetRoulette/PetRoulette-Prefix.pch";
+				INFOPLIST_FILE = "PetRoulette/PetRoulette-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		ED92634C1726DE6600569E0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PetRoulette.app/PetRoulette";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PetRoulette/PetRoulette-Prefix.pch";
+				INFOPLIST_FILE = "PetRouletteTests/PetRouletteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		ED92634D1726DE6600569E0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PetRoulette.app/PetRoulette";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PetRoulette/PetRoulette-Prefix.pch";
+				INFOPLIST_FILE = "PetRouletteTests/PetRouletteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED9263081726DE6600569E0F /* Build configuration list for PBXProject "PetRoulette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED9263461726DE6600569E0F /* Debug */,
+				ED9263471726DE6600569E0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED9263481726DE6600569E0F /* Build configuration list for PBXNativeTarget "PetRoulette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED9263491726DE6600569E0F /* Debug */,
+				ED92634A1726DE6600569E0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED92634B1726DE6600569E0F /* Build configuration list for PBXNativeTarget "PetRouletteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED92634C1726DE6600569E0F /* Debug */,
+				ED92634D1726DE6600569E0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED9263051726DE6600569E0F /* Project object */;
+}

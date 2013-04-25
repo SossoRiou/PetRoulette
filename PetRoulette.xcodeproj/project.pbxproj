@@ -17,13 +17,22 @@
 		ED9263251726DE6600569E0F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9263241726DE6600569E0F /* Default@2x.png */; };
 		ED9263271726DE6600569E0F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9263261726DE6600569E0F /* Default-568h@2x.png */; };
 		ED92632A1726DE6600569E0F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9263281726DE6600569E0F /* MainStoryboard_iPhone.storyboard */; };
-		ED92632D1726DE6600569E0F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED92632B1726DE6600569E0F /* MainStoryboard_iPad.storyboard */; };
 		ED9263301726DE6600569E0F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED92632F1726DE6600569E0F /* ViewController.m */; };
 		ED9263381726DE6600569E0F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263371726DE6600569E0F /* SenTestingKit.framework */; };
 		ED9263391726DE6600569E0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263101726DE6600569E0F /* UIKit.framework */; };
 		ED92633A1726DE6600569E0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263121726DE6600569E0F /* Foundation.framework */; };
 		ED9263421726DE6600569E0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED9263401726DE6600569E0F /* InfoPlist.strings */; };
 		ED9263451726DE6600569E0F /* PetRouletteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263441726DE6600569E0F /* PetRouletteTests.m */; };
+		ED92635C1726DEA100569E0F /* Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = ED92634F1726DEA100569E0F /* Appointment.m */; };
+		ED92635D1726DEA100569E0F /* GenericParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263511726DEA100569E0F /* GenericParser.m */; };
+		ED92635E1726DEA100569E0F /* JsonDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263531726DEA100569E0F /* JsonDetailsModel.m */; };
+		ED92635F1726DEA100569E0F /* JsonRandomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263551726DEA100569E0F /* JsonRandomModel.m */; };
+		ED9263601726DEA100569E0F /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263571726DEA100569E0F /* Pet.m */; };
+		ED9263611726DEA100569E0F /* PetParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263591726DEA100569E0F /* PetParser.m */; };
+		ED9263621726DEA100569E0F /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = ED92635B1726DEA100569E0F /* Video.m */; };
+		ED9263641726E15E00569E0F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263631726E15E00569E0F /* MediaPlayer.framework */; };
+		ED92638A1727EFEA00569E0F /* PSYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263871727EFEA00569E0F /* PSYouTubeExtractor.m */; };
+		ED92638B1727EFEA00569E0F /* PSYouTubeView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263881727EFEA00569E0F /* PSYouTubeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +60,6 @@
 		ED9263241726DE6600569E0F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		ED9263261726DE6600569E0F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		ED9263291726DE6600569E0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		ED92632C1726DE6600569E0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		ED92632E1726DE6600569E0F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		ED92632F1726DE6600569E0F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ED9263361726DE6600569E0F /* PetRouletteTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetRouletteTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +68,25 @@
 		ED9263411726DE6600569E0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ED9263431726DE6600569E0F /* PetRouletteTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetRouletteTests.h; sourceTree = "<group>"; };
 		ED9263441726DE6600569E0F /* PetRouletteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetRouletteTests.m; sourceTree = "<group>"; };
+		ED92634E1726DEA100569E0F /* Appointment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appointment.h; path = ../../../PetRoulette/Appointment.h; sourceTree = "<group>"; };
+		ED92634F1726DEA100569E0F /* Appointment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Appointment.m; path = ../../../PetRoulette/Appointment.m; sourceTree = "<group>"; };
+		ED9263501726DEA100569E0F /* GenericParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenericParser.h; path = ../../../PetRoulette/GenericParser.h; sourceTree = "<group>"; };
+		ED9263511726DEA100569E0F /* GenericParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenericParser.m; path = ../../../PetRoulette/GenericParser.m; sourceTree = "<group>"; };
+		ED9263521726DEA100569E0F /* JsonDetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonDetailsModel.h; path = ../../../PetRoulette/JsonDetailsModel.h; sourceTree = "<group>"; };
+		ED9263531726DEA100569E0F /* JsonDetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JsonDetailsModel.m; path = ../../../PetRoulette/JsonDetailsModel.m; sourceTree = "<group>"; };
+		ED9263541726DEA100569E0F /* JsonRandomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonRandomModel.h; path = ../../../PetRoulette/JsonRandomModel.h; sourceTree = "<group>"; };
+		ED9263551726DEA100569E0F /* JsonRandomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JsonRandomModel.m; path = ../../../PetRoulette/JsonRandomModel.m; sourceTree = "<group>"; };
+		ED9263561726DEA100569E0F /* Pet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pet.h; path = ../../../PetRoulette/Pet.h; sourceTree = "<group>"; };
+		ED9263571726DEA100569E0F /* Pet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pet.m; path = ../../../PetRoulette/Pet.m; sourceTree = "<group>"; };
+		ED9263581726DEA100569E0F /* PetParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PetParser.h; path = ../../../PetRoulette/PetParser.h; sourceTree = "<group>"; };
+		ED9263591726DEA100569E0F /* PetParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PetParser.m; path = ../../../PetRoulette/PetParser.m; sourceTree = "<group>"; };
+		ED92635A1726DEA100569E0F /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Video.h; path = ../../../PetRoulette/Video.h; sourceTree = "<group>"; };
+		ED92635B1726DEA100569E0F /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Video.m; path = ../../../PetRoulette/Video.m; sourceTree = "<group>"; };
+		ED9263631726E15E00569E0F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		ED9263861727EFE900569E0F /* PSYouTubeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSYouTubeView.h; path = ../../../../PSYouTubeExtractor/PSYouTubeView.h; sourceTree = "<group>"; };
+		ED9263871727EFEA00569E0F /* PSYouTubeExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSYouTubeExtractor.m; path = ../../../../PSYouTubeExtractor/PSYouTubeExtractor.m; sourceTree = "<group>"; };
+		ED9263881727EFEA00569E0F /* PSYouTubeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSYouTubeView.m; path = ../../../../PSYouTubeExtractor/PSYouTubeView.m; sourceTree = "<group>"; };
+		ED9263891727EFEA00569E0F /* PSYouTubeExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSYouTubeExtractor.h; path = ../../../../PSYouTubeExtractor/PSYouTubeExtractor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9263641726E15E00569E0F /* MediaPlayer.framework in Frameworks */,
 				ED9263111726DE6600569E0F /* UIKit.framework in Frameworks */,
 				ED9263131726DE6600569E0F /* Foundation.framework in Frameworks */,
 				ED9263151726DE6600569E0F /* CoreGraphics.framework in Frameworks */,
@@ -89,6 +117,7 @@
 		ED9263041726DE6600569E0F = {
 			isa = PBXGroup;
 			children = (
+				ED9263631726E15E00569E0F /* MediaPlayer.framework */,
 				ED9263161726DE6600569E0F /* PetRoulette */,
 				ED92633D1726DE6600569E0F /* PetRouletteTests */,
 				ED92630F1726DE6600569E0F /* Frameworks */,
@@ -119,12 +148,11 @@
 		ED9263161726DE6600569E0F /* PetRoulette */ = {
 			isa = PBXGroup;
 			children = (
+				EDB80FA217294FEA0008D7EB /* Model */,
+				EDB80FA317294FF30008D7EB /* Controller */,
 				ED92631F1726DE6600569E0F /* AppDelegate.h */,
 				ED9263201726DE6600569E0F /* AppDelegate.m */,
 				ED9263281726DE6600569E0F /* MainStoryboard_iPhone.storyboard */,
-				ED92632B1726DE6600569E0F /* MainStoryboard_iPad.storyboard */,
-				ED92632E1726DE6600569E0F /* ViewController.h */,
-				ED92632F1726DE6600569E0F /* ViewController.m */,
 				ED9263171726DE6600569E0F /* Supporting Files */,
 			);
 			path = PetRoulette;
@@ -161,6 +189,56 @@
 				ED9263401726DE6600569E0F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDB80FA217294FEA0008D7EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED92634E1726DEA100569E0F /* Appointment.h */,
+				ED92634F1726DEA100569E0F /* Appointment.m */,
+				ED9263561726DEA100569E0F /* Pet.h */,
+				ED9263571726DEA100569E0F /* Pet.m */,
+				ED92635A1726DEA100569E0F /* Video.h */,
+				ED92635B1726DEA100569E0F /* Video.m */,
+				EDB80FA5172950860008D7EB /* YouTube */,
+				EDB80FA4172950050008D7EB /* Parser */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EDB80FA317294FF30008D7EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ED92632E1726DE6600569E0F /* ViewController.h */,
+				ED92632F1726DE6600569E0F /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EDB80FA4172950050008D7EB /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				ED9263521726DEA100569E0F /* JsonDetailsModel.h */,
+				ED9263531726DEA100569E0F /* JsonDetailsModel.m */,
+				ED9263541726DEA100569E0F /* JsonRandomModel.h */,
+				ED9263551726DEA100569E0F /* JsonRandomModel.m */,
+				ED9263501726DEA100569E0F /* GenericParser.h */,
+				ED9263511726DEA100569E0F /* GenericParser.m */,
+				ED9263581726DEA100569E0F /* PetParser.h */,
+				ED9263591726DEA100569E0F /* PetParser.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		EDB80FA5172950860008D7EB /* YouTube */ = {
+			isa = PBXGroup;
+			children = (
+				ED9263891727EFEA00569E0F /* PSYouTubeExtractor.h */,
+				ED9263871727EFEA00569E0F /* PSYouTubeExtractor.m */,
+				ED9263861727EFE900569E0F /* PSYouTubeView.h */,
+				ED9263881727EFEA00569E0F /* PSYouTubeView.m */,
+			);
+			name = YouTube;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +317,6 @@
 				ED9263251726DE6600569E0F /* Default@2x.png in Resources */,
 				ED9263271726DE6600569E0F /* Default-568h@2x.png in Resources */,
 				ED92632A1726DE6600569E0F /* MainStoryboard_iPhone.storyboard in Resources */,
-				ED92632D1726DE6600569E0F /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +354,15 @@
 				ED92631D1726DE6600569E0F /* main.m in Sources */,
 				ED9263211726DE6600569E0F /* AppDelegate.m in Sources */,
 				ED9263301726DE6600569E0F /* ViewController.m in Sources */,
+				ED92635C1726DEA100569E0F /* Appointment.m in Sources */,
+				ED92635D1726DEA100569E0F /* GenericParser.m in Sources */,
+				ED92635E1726DEA100569E0F /* JsonDetailsModel.m in Sources */,
+				ED92635F1726DEA100569E0F /* JsonRandomModel.m in Sources */,
+				ED9263601726DEA100569E0F /* Pet.m in Sources */,
+				ED9263611726DEA100569E0F /* PetParser.m in Sources */,
+				ED9263621726DEA100569E0F /* Video.m in Sources */,
+				ED92638A1727EFEA00569E0F /* PSYouTubeExtractor.m in Sources */,
+				ED92638B1727EFEA00569E0F /* PSYouTubeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,14 +399,6 @@
 				ED9263291726DE6600569E0F /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		ED92632B1726DE6600569E0F /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED92632C1726DE6600569E0F /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		ED9263401726DE6600569E0F /* InfoPlist.strings */ = {
@@ -398,7 +476,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetRoulette/PetRoulette-Prefix.pch";
 				INFOPLIST_FILE = "PetRoulette/PetRoulette-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -409,7 +489,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetRoulette/PetRoulette-Prefix.pch";
 				INFOPLIST_FILE = "PetRoulette/PetRoulette-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -467,6 +549,7 @@
 				ED92634A1726DE6600569E0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED92634B1726DE6600569E0F /* Build configuration list for PBXNativeTarget "PetRouletteTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +558,7 @@
 				ED92634D1726DE6600569E0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

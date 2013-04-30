@@ -4,59 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Test View Controller-->
-        <scene sceneID="U6X-Ag-r9O">
-            <objects>
-                <viewController id="RI7-qb-jHt" customClass="TestViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zd3-xY-r2y">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaN-L8-rTr">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeN-qm-3A6">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="testAction:" destination="RI7-qb-jHt" eventType="touchUpInside" id="9Cf-hB-tD4"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBj-zO-1BG">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="JeN-qm-3A6" firstAttribute="leading" secondItem="eaN-L8-rTr" secondAttribute="leading" type="default" id="94n-L6-3e3"/>
-                            <constraint firstAttribute="bottom" secondItem="JeN-qm-3A6" secondAttribute="bottom" constant="60" id="JvP-1b-wvQ"/>
-                            <constraint firstItem="eaN-L8-rTr" firstAttribute="top" secondItem="zd3-xY-r2y" secondAttribute="top" constant="31" id="KlU-XD-F4Q"/>
-                            <constraint firstItem="JeN-qm-3A6" firstAttribute="baseline" secondItem="DBj-zO-1BG" secondAttribute="baseline" type="default" id="QZ3-BL-ZyS"/>
-                            <constraint firstItem="DBj-zO-1BG" firstAttribute="leading" secondItem="zd3-xY-r2y" secondAttribute="leading" constant="130" id="Rc3-yd-9mX"/>
-                            <constraint firstItem="eaN-L8-rTr" firstAttribute="leading" secondItem="zd3-xY-r2y" secondAttribute="leading" constant="31" id="UJq-vZ-249"/>
-                            <constraint firstAttribute="trailing" secondItem="eaN-L8-rTr" secondAttribute="trailing" constant="28" id="Wj2-er-d2u"/>
-                            <constraint firstAttribute="bottom" secondItem="eaN-L8-rTr" secondAttribute="bottom" constant="219" id="fSj-I8-vac"/>
-                            <constraint firstAttribute="bottom" secondItem="DBj-zO-1BG" secondAttribute="bottom" constant="72" id="uiG-Og-Z82"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="R6E-tC-Xwt"/>
-                    <connections>
-                        <outlet property="testlabel" destination="DBj-zO-1BG" id="VF4-Z3-7l3"/>
-                        <outlet property="videoView" destination="eaN-L8-rTr" id="q1H-ia-fa6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="El3-CV-cSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1410" y="-836"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="5">
             <objects>
@@ -227,25 +174,24 @@
             </objects>
             <point key="canvasLocation" x="437" y="-136"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="0Sk-hs-NRB">
-            <objects>
-                <navigationController id="a8G-ij-a9A" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Szb-aQ-N0r">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="RI7-qb-jHt" kind="relationship" relationship="rootViewController" id="aXH-6k-4Y3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bCs-KX-9mG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="884" y="-836"/>
-        </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nextAction:"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="shelterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="speciesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="videoView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

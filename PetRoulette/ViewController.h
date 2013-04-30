@@ -21,14 +21,23 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *shelterLabel;
 
-@property (strong, nonatomic) MPMoviePlayerController *moviePlayer;
-
-
-
 
 - (IBAction)nextAction:(id)sender;
-
+/*
+ We can have some url such as http://www.youtube.com/embed/p8mzlHiFDA0 or such as http://www.youtube.com/watch?v=p8mzlHiFDA0
+ Allows us to change any url to the second format, with '/watch?v=' instead of 'embed'
+ @param urlTarget is the URL String we want to transform
+ @return a String with watch instead of embed
+ */
+-(NSString*)convertYouTubeURLToGoodFormat:(NSString*)urlTarget;
+/*
+ Methods that load the main view contents
+ Fill all the label contents with the pet details from the model
+ Load and play the main video
+ */
+-(void)updateVideoView;
 
 @property (weak, nonatomic) IBOutlet UIView *videoView;
+
 
 @end

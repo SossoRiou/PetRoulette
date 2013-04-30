@@ -34,7 +34,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextAction:" destination="2" eventType="touchUpInside" id="Egx-pb-JwF"/>
-                                    <segue destination="2" kind="push" id="mbS-dE-qx9"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v6h-7A-YzD">
@@ -197,7 +196,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="TXf-ZX-9sE"/>
-    </inferredMetricsTieBreakers>
 </document>

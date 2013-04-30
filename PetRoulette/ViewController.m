@@ -19,6 +19,28 @@
 @implementation ViewController
 
 - (IBAction)nextAction:(id)sender {
+    //Initialisation of PetParser wich will do the random API call
+    PetParser *petParser = [[PetParser alloc] init];
+    [petParser next];
+    
+    //Labels get their contents
+    self.nextLabel.text = [NSString stringWithFormat:@"Nexted %lu time", (unsigned long)petParser.current_pet.pet_nextCount];
+    self.nameLabel.text = petParser.current_pet.pet_name;
+    [self.nameLabel setHidden:false];
+    self.descriptionLabel.text = petParser.current_pet.pet_description;
+    [self.descriptionLabel setHidden:false];
+    self.speciesLabel.text = petParser.current_pet.pet_species_name;
+    [self.speciesLabel setHidden:false];
+    self.shelterLabel.text = petParser.current_pet.shelter_name;
+    [self.shelterLabel setHidden:false];
+    
+    //transform the url of the current pet if it is needed to the good way
+    NSString *url_final = [self convertYouTubeURLToGoodFormat:petParser.current_pet.pet_currentVideo.video_url];
+    NSURL *youTubeURL = [NSURL URLWithString:url_final];
+    
+    
+    //We load and play the video associated to the former youtube url
+    [self.youtubeView loadAndPlayVideoWithUrl:youTubeURL];
 }
 
 /*

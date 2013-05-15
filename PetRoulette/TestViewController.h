@@ -2,16 +2,15 @@
 //  TestViewController.h
 //  PetRoulette
 //
-//  Created by IGPROJ-MAC01 on 23/04/13.
+//  Created by IGPROJ-MAC01 on 14/05/13.
 //  Copyright (c) 2013 IGPROJ-MAC01. All rights reserved.
 //
-#import <MediaPlayer/MediaPlayer.h>
+
 #import <UIKit/UIKit.h>
 
 @interface TestViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *videoView;
-@property (weak, nonatomic) IBOutlet UILabel *testlabel;
 
-- (IBAction)testAction:(id)sender;
+@property (strong, nonatomic) NSURL *url_video; //already at a good format
+
 
 @end

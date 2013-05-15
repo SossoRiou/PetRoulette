@@ -2,20 +2,23 @@
 //  TestViewController.m
 //  PetRoulette
 //
-//  Created by IGPROJ-MAC01 on 23/04/13.
+//  Created by IGPROJ-MAC01 on 14/05/13.
 //  Copyright (c) 2013 IGPROJ-MAC01. All rights reserved.
 //
 
-#import "PSYouTubeExtractor.h"
-#import "PSYouTubeView.h"
-#import "PetParser.h"
+#import "LBYouTubePlayerController.h"
 #import "TestViewController.h"
 
 @interface TestViewController ()
 
+@property (strong, nonatomic) LBYouTubePlayerController *player;
+
 @end
 
 @implementation TestViewController
+
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,25 +28,27 @@
     }
     return self;
 }
-- (void) movieFinishedCallback:(NSNotification*) aNotification {
-    MPMoviePlayerController *player = [aNotification object];
-    [[NSNotificationCenter defaultCenter]
-     removeObserver:self
-     name:MPMoviePlayerPlaybackDidFinishNotification
-     object:player];
-}
+
 - (void)viewDidLoad
 {
-    
-    NSURL *youTubeURL = [NSURL URLWithString:@"http://www.youtube.com/watch?v=Vo0Cazxj_yc"];
-    CGFloat size = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? 250 : 500;
-    CGRect videoRect = CGRectMake(0, 0, size, size);
-    
-    PSYouTubeView *youTubeView = [[PSYouTubeView alloc] initWithYouTubeURL:youTubeURL frame:videoRect showNativeFirst:YES];
-    youTubeView.center = self.videoView.center;
-    youTubeView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-    [self.videoView addSubview:youTubeView];
+    /*Really short video -> for test*/
+     NSURL *youTubeURL = [NSURL URLWithString:@"http://www.youtube.com/watch?v=wXw6znXPfy4"];
+     
+    [super viewDidLoad];
 
+    self.player = [[LBYouTubePlayerController alloc] initWithYouTubeURL:youTubeURL quality:LBYouTubeVideoQualityLarge];
+    
+    NSLog(@"URL VIDEO TRANSMIS : %@", self.url_video.description);
+    
+    //self.player = [[LBYouTubePlayerController alloc] initWithYouTubeURL:self.url_video quality:LBYouTubeVideoQualityLarge];
+
+   // player.view.autoresizingMask = (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin);
+    
+    self.player.view.frame = CGRectMake(0.0f, 0.0f, 200.0f, 200.0f);
+    self.player.view.center = self.view.center;
+    self.player.delegate = self;
+    
+    [self.view addSubview:self.player.view];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,7 +56,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)testAction:(id)sender {
-    self.testlabel.text = @"BLAAAAA";
-}
+
 @end

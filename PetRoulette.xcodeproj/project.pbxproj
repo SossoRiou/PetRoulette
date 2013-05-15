@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED108D8C1733AE63000448A2 /* AdoptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED108D8B1733AE63000448A2 /* AdoptViewController.m */; };
+		ED108D8F1733AE6E000448A2 /* DonateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED108D8E1733AE6E000448A2 /* DonateViewController.m */; };
+		ED89D7EF1733BDB8007CEDDA /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED89D7EE1733BDB8007CEDDA /* DateViewController.m */; };
+		ED89D7F81733FAEA007CEDDA /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED89D7F71733FAEA007CEDDA /* UserViewController.m */; };
+		ED8D318D1736B22D0092DFF7 /* VideosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D318C1736B22D0092DFF7 /* VideosTableViewController.m */; };
+		ED8D31931736D26E0092DFF7 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D31921736D26E0092DFF7 /* CustomCell.m */; };
+		ED920A9D174112470072315D /* LBYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = ED920A88174112470072315D /* LBYouTubeExtractor.m */; };
+		ED920A9E174112470072315D /* LBYouTubePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED920A8A174112470072315D /* LBYouTubePlayerController.m */; };
 		ED9263111726DE6600569E0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263101726DE6600569E0F /* UIKit.framework */; };
 		ED9263131726DE6600569E0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263121726DE6600569E0F /* Foundation.framework */; };
 		ED9263151726DE6600569E0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263141726DE6600569E0F /* CoreGraphics.framework */; };
@@ -31,8 +39,8 @@
 		ED9263611726DEA100569E0F /* PetParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263591726DEA100569E0F /* PetParser.m */; };
 		ED9263621726DEA100569E0F /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = ED92635B1726DEA100569E0F /* Video.m */; };
 		ED9263641726E15E00569E0F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263631726E15E00569E0F /* MediaPlayer.framework */; };
-		ED92638A1727EFEA00569E0F /* PSYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263871727EFEA00569E0F /* PSYouTubeExtractor.m */; };
-		ED92638B1727EFEA00569E0F /* PSYouTubeView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263881727EFEA00569E0F /* PSYouTubeView.m */; };
+		EDA0A02517427A200041A424 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA0A02417427A200041A424 /* TestViewController.m */; };
+		EDD45B2717301126007D4E1E /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD45B2617301126007D4E1E /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +54,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED108D8A1733AE63000448A2 /* AdoptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdoptViewController.h; sourceTree = "<group>"; };
+		ED108D8B1733AE63000448A2 /* AdoptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdoptViewController.m; sourceTree = "<group>"; };
+		ED108D8D1733AE6E000448A2 /* DonateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonateViewController.h; sourceTree = "<group>"; };
+		ED108D8E1733AE6E000448A2 /* DonateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonateViewController.m; sourceTree = "<group>"; };
+		ED89D7ED1733BDB8007CEDDA /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
+		ED89D7EE1733BDB8007CEDDA /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
+		ED89D7F61733FAEA007CEDDA /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		ED89D7F71733FAEA007CEDDA /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		ED8D318B1736B22D0092DFF7 /* VideosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosTableViewController.h; sourceTree = "<group>"; };
+		ED8D318C1736B22D0092DFF7 /* VideosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosTableViewController.m; sourceTree = "<group>"; };
+		ED8D31911736D26E0092DFF7 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		ED8D31921736D26E0092DFF7 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		ED920A86174112470072315D /* LBYouTube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTube.h; sourceTree = "<group>"; };
+		ED920A87174112470072315D /* LBYouTubeExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubeExtractor.h; sourceTree = "<group>"; };
+		ED920A88174112470072315D /* LBYouTubeExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubeExtractor.m; sourceTree = "<group>"; };
+		ED920A89174112470072315D /* LBYouTubePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubePlayerController.h; sourceTree = "<group>"; };
+		ED920A8A174112470072315D /* LBYouTubePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubePlayerController.m; sourceTree = "<group>"; };
 		ED92630D1726DE6600569E0F /* PetRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9263101726DE6600569E0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ED9263121726DE6600569E0F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,10 +108,10 @@
 		ED92635A1726DEA100569E0F /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Video.h; path = ../../../PetRoulette/Video.h; sourceTree = "<group>"; };
 		ED92635B1726DEA100569E0F /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Video.m; path = ../../../PetRoulette/Video.m; sourceTree = "<group>"; };
 		ED9263631726E15E00569E0F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		ED9263861727EFE900569E0F /* PSYouTubeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSYouTubeView.h; path = ../../../../PSYouTubeExtractor/PSYouTubeView.h; sourceTree = "<group>"; };
-		ED9263871727EFEA00569E0F /* PSYouTubeExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSYouTubeExtractor.m; path = ../../../../PSYouTubeExtractor/PSYouTubeExtractor.m; sourceTree = "<group>"; };
-		ED9263881727EFEA00569E0F /* PSYouTubeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSYouTubeView.m; path = ../../../../PSYouTubeExtractor/PSYouTubeView.m; sourceTree = "<group>"; };
-		ED9263891727EFEA00569E0F /* PSYouTubeExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSYouTubeExtractor.h; path = ../../../../PSYouTubeExtractor/PSYouTubeExtractor.h; sourceTree = "<group>"; };
+		EDA0A02317427A200041A424 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		EDA0A02417427A200041A424 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		EDD45B2517301126007D4E1E /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		EDD45B2617301126007D4E1E /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +139,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED920A85174112470072315D /* LBYouTubeView */ = {
+			isa = PBXGroup;
+			children = (
+				ED920A86174112470072315D /* LBYouTube.h */,
+				ED920A87174112470072315D /* LBYouTubeExtractor.h */,
+				ED920A88174112470072315D /* LBYouTubeExtractor.m */,
+				ED920A89174112470072315D /* LBYouTubePlayerController.h */,
+				ED920A8A174112470072315D /* LBYouTubePlayerController.m */,
+			);
+			name = LBYouTubeView;
+			path = "../../../../Downloads/LBYouTubeView-master/LBYouTubeView";
+			sourceTree = "<group>";
+		};
 		ED9263041726DE6600569E0F = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +232,8 @@
 		EDB80FA217294FEA0008D7EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ED8D31911736D26E0092DFF7 /* CustomCell.h */,
+				ED8D31921736D26E0092DFF7 /* CustomCell.m */,
 				ED92634E1726DEA100569E0F /* Appointment.h */,
 				ED92634F1726DEA100569E0F /* Appointment.m */,
 				ED9263561726DEA100569E0F /* Pet.h */,
@@ -209,8 +249,10 @@
 		EDB80FA317294FF30008D7EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				ED92632E1726DE6600569E0F /* ViewController.h */,
-				ED92632F1726DE6600569E0F /* ViewController.m */,
+				EDE524131734FD6E00171D1F /* Random-Next */,
+				EDE524141734FD8800171D1F /* Details */,
+				EDE524151734FDA500171D1F /* Adopt */,
+				EDE524161734FDDB00171D1F /* Donate */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -233,12 +275,53 @@
 		EDB80FA5172950860008D7EB /* YouTube */ = {
 			isa = PBXGroup;
 			children = (
-				ED9263891727EFEA00569E0F /* PSYouTubeExtractor.h */,
-				ED9263871727EFEA00569E0F /* PSYouTubeExtractor.m */,
-				ED9263861727EFE900569E0F /* PSYouTubeView.h */,
-				ED9263881727EFEA00569E0F /* PSYouTubeView.m */,
+				ED920A85174112470072315D /* LBYouTubeView */,
 			);
 			name = YouTube;
+			sourceTree = "<group>";
+		};
+		EDE524131734FD6E00171D1F /* Random-Next */ = {
+			isa = PBXGroup;
+			children = (
+				ED92632E1726DE6600569E0F /* ViewController.h */,
+				ED92632F1726DE6600569E0F /* ViewController.m */,
+			);
+			name = "Random-Next";
+			sourceTree = "<group>";
+		};
+		EDE524141734FD8800171D1F /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				EDA0A02317427A200041A424 /* TestViewController.h */,
+				EDA0A02417427A200041A424 /* TestViewController.m */,
+				ED89D7F61733FAEA007CEDDA /* UserViewController.h */,
+				ED89D7F71733FAEA007CEDDA /* UserViewController.m */,
+				EDD45B2517301126007D4E1E /* DetailsViewController.h */,
+				EDD45B2617301126007D4E1E /* DetailsViewController.m */,
+				ED8D318B1736B22D0092DFF7 /* VideosTableViewController.h */,
+				ED8D318C1736B22D0092DFF7 /* VideosTableViewController.m */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		EDE524151734FDA500171D1F /* Adopt */ = {
+			isa = PBXGroup;
+			children = (
+				ED89D7ED1733BDB8007CEDDA /* DateViewController.h */,
+				ED89D7EE1733BDB8007CEDDA /* DateViewController.m */,
+				ED108D8A1733AE63000448A2 /* AdoptViewController.h */,
+				ED108D8B1733AE63000448A2 /* AdoptViewController.m */,
+			);
+			name = Adopt;
+			sourceTree = "<group>";
+		};
+		EDE524161734FDDB00171D1F /* Donate */ = {
+			isa = PBXGroup;
+			children = (
+				ED108D8D1733AE6E000448A2 /* DonateViewController.h */,
+				ED108D8E1733AE6E000448A2 /* DonateViewController.m */,
+			);
+			name = Donate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,8 +444,16 @@
 				ED9263601726DEA100569E0F /* Pet.m in Sources */,
 				ED9263611726DEA100569E0F /* PetParser.m in Sources */,
 				ED9263621726DEA100569E0F /* Video.m in Sources */,
-				ED92638A1727EFEA00569E0F /* PSYouTubeExtractor.m in Sources */,
-				ED92638B1727EFEA00569E0F /* PSYouTubeView.m in Sources */,
+				EDD45B2717301126007D4E1E /* DetailsViewController.m in Sources */,
+				ED108D8C1733AE63000448A2 /* AdoptViewController.m in Sources */,
+				ED108D8F1733AE6E000448A2 /* DonateViewController.m in Sources */,
+				ED89D7EF1733BDB8007CEDDA /* DateViewController.m in Sources */,
+				ED89D7F81733FAEA007CEDDA /* UserViewController.m in Sources */,
+				ED8D318D1736B22D0092DFF7 /* VideosTableViewController.m in Sources */,
+				ED8D31931736D26E0092DFF7 /* CustomCell.m in Sources */,
+				ED920A9D174112470072315D /* LBYouTubeExtractor.m in Sources */,
+				ED920A9E174112470072315D /* LBYouTubePlayerController.m in Sources */,
+				EDA0A02517427A200041A424 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

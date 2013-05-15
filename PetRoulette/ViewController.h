@@ -11,18 +11,21 @@
 
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *nextLabel;
+/* ------ Parameters of class --------*/
 
+//Labels
+@property (weak, nonatomic) IBOutlet UILabel *nextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *speciesLabel;
+/* ------ Methods of class --------*/
 
-@property (weak, nonatomic) IBOutlet UILabel *shelterLabel;
-
-
+/*
+ Corresponds to Next Action : call the API to get a new Pet and play a new video
+ @param id is the button identifier
+ */
 - (IBAction)nextAction:(id)sender;
+
 /*
  We can have some url such as http://www.youtube.com/embed/p8mzlHiFDA0 or such as http://www.youtube.com/watch?v=p8mzlHiFDA0
  Allows us to change any url to the second format, with '/watch?v=' instead of 'embed'
@@ -30,6 +33,7 @@
  @return a String with watch instead of embed
  */
 -(NSString*)convertYouTubeURLToGoodFormat:(NSString*)urlTarget;
+
 /*
  Methods that load the main view contents
  Fill all the label contents with the pet details from the model
@@ -37,7 +41,16 @@
  */
 -(void)updateVideoView;
 
+
+/*
+ Method allowing us to have the dimensions of the main screen and return the rect with that dimensions
+ */
+-(CGRect)resizeDynamically;
+
+//View
 @property (weak, nonatomic) IBOutlet UIView *videoView;
 
+//Actual Pet tthat the video describe and that the details talk about
+@property (strong, nonatomic) Pet *currentPet;
 
 @end

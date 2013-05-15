@@ -37,22 +37,23 @@
 
 -(void)test_constructor_pet{
     
-    Video *test_video = [[Video alloc] initVideoWithTitle:@"Title Test" atOrder:1 withURL:[NSURL URLWithString:@"http://google.fr/test"] createdAt:@"2012-02-04" byShelter:10 forPet:2];
+    Video *video = [[Video alloc] initVideoWithTitle:@"Title Test" atOrder:1 withURL:[NSURL URLWithString:@"http://google.fr/test"] createdAt:@"2012-02-04" byShelter:10 forPet:2];
     
-    STAssertNotNil(test_video, @"Could not create test_video");
     
-    Pet *test_pet = [[Pet alloc] initPetWithId:10 andNamed:@"Upsy" withRace:@"Bouledogue Francais" ofSpeciesId:(NSUInteger)11 andSpeciesName:@"Dogs" bornIn:@"1999-07-05" createdOn:@"2012-02-04" withDescription:@"THE MOST BEAUTIFUL DOG EVER" nexted:0 showedByVideo:test_video];
+    Pet *test_pet = [[Pet alloc] initPetWithId:10 andNamed:@"Upsy" withRace:@"Bouledogue Francais" ofSpeciesId:(NSUInteger)11 andSpeciesName:@"Dogs" bornIn:@"1999-07-05" createdOn:@"2012-02-04" availableUntil:@"2013-04" withDescription:@"THE MOST BEAUTIFUL DOG EVER" nexted:12 showedByVideo:video];
     
     STAssertNotNil(test_pet, @"Could not create test_pet");
     STAssertEquals((NSUInteger)10, test_pet.pet_id, @"This pet should be registered at id : 10 but it's not");
     STAssertEquals(@"Upsy", test_pet.pet_name, @"This pet should be named Upsy but it's not");
     STAssertEquals(@"Bouledogue Francais", test_pet.pet_race, @"This pet should be a Bouledogue Francais but it's not");
+    STAssertEquals((NSUInteger)11, test_pet.pet_species_id, @"This pet should have 11 as species id but it does not");
     STAssertEquals(@"Dogs", test_pet.pet_species_name, @"This pet should be a dog but it's not");
     STAssertEquals(@"1999-07-05", test_pet.pet_birthDate, @"This pet add should be born on 1999, july 5th");
     STAssertEquals(@"2012-02-04", test_pet.pet_createdDate, @"This pet add should have been created on 2012, february 4th");
+    STAssertEquals(@"2013-04", test_pet.pet_available_untilDate, @"This pet add should be available until on 2013, april");
     STAssertEquals(@"THE MOST BEAUTIFUL DOG EVER", test_pet.pet_description, @"This pet should be described as THE MOST BEAUTIFUL DOG EVER but it's not");
-    STAssertEquals((NSUInteger)0, test_pet.pet_nextCount, @"The dog should be nexted 0 times but it's not");
-    STAssertEquals(test_video, test_pet.pet_currentVideo, @"Ths dog should have the former video but it's not");
+    STAssertEquals((NSUInteger)12, test_pet.pet_nextCount, @"The dog should be nexted 0 times but it's not");
+    STAssertEquals(video, test_pet.pet_currentVideo, @"This dog should have the former video but it's not");
     
     
 }
@@ -61,7 +62,7 @@
 -(void)test_set_details_Pet{
     Video *video = [[Video alloc] initVideoWithTitle:@"Title Test" atOrder:1 withURL:[NSURL URLWithString:@"http://google.fr/test"] createdAt:@"2012-02-04" byShelter:10 forPet:2];
     
-    Pet *test_pet = [[Pet alloc] initPetWithId:10 andNamed:@"Upsy" withRace:@"Bouledogue Francais" ofSpeciesId:(NSUInteger)11 andSpeciesName:@"Dogs" bornIn:@"1999-07-05" createdOn:@"2012-02-04" withDescription:@"THE MOST BEAUTIFUL DOG EVER" nexted:0 showedByVideo:video];
+    Pet *test_pet = [[Pet alloc] initPetWithId:10 andNamed:@"Upsy" withRace:@"Bouledogue Francais" ofSpeciesId:(NSUInteger)11 andSpeciesName:@"Dogs" bornIn:@"1999-07-05" createdOn:@"2012-02-04" availableUntil:@"2013-04" withDescription:@"THE MOST BEAUTIFUL DOG EVER" nexted:12 showedByVideo:video];
     
     [test_pet setDetailsShelterWithId:001 andNamed:@"La Maison du Soleil" toCallAtNumber:@"04 67 55 58 71" orByMail:@"solene34.riou@laposte.net" createdON:@"1990-03-11" locatedAtTheAddress:@"115 Chemin des Vignes" showedByListVideo:nil];
     
@@ -77,7 +78,7 @@
 
 -(void)test_getAge{
     Video *video = [[Video alloc] initVideoWithTitle:@"Title Test" atOrder:1 withURL:[NSURL URLWithString:@"http://google.fr/test"] createdAt:@"2012-02-04" byShelter:10 forPet:2];
-    Pet *pet = [[Pet alloc] initPetWithId:10 andNamed:@"Upsy" withRace:@"Bouledogue Francais" ofSpeciesId:(NSUInteger)11 andSpeciesName:@"Dogs" bornIn:@"1999-07-05" createdOn:@"2012-02-04" withDescription:@"THE MOST BEAUTIFUL DOG EVER" nexted:0 showedByVideo:video];
+    Pet *pet = [[Pet alloc] initPetWithId:10 andNamed:@"Upsy" withRace:@"Bouledogue Francais" ofSpeciesId:(NSUInteger)11 andSpeciesName:@"Dogs" bornIn:@"1999-07-05" createdOn:@"2012-02-04" availableUntil:@"2013-04" withDescription:@"THE MOST BEAUTIFUL DOG EVER" nexted:12 showedByVideo:video];
     
     STAssertEquals((NSUInteger)13, [pet getAge], @"The pet should have 0 years old and it's not");
 }
@@ -86,7 +87,7 @@
 -(void)test_constructor_appointment{
     Video *video = [[Video alloc] initVideoWithTitle:@"Title Test" atOrder:1 withURL:[NSURL URLWithString:@"http://google.fr/test"] createdAt:@"2012-02-04" byShelter:10 forPet:2];
     
-    Pet *pet = [[Pet alloc] initPetWithId:10 andNamed:@"Upsy" withRace:@"Bouledogue Francais" ofSpeciesId:(NSUInteger)11 andSpeciesName:@"Dogs" bornIn:@"1999-07-05" createdOn:@"2012-02-04" withDescription:@"THE MOST BEAUTIFUL DOG EVER" nexted:0 showedByVideo:video];
+    Pet *pet = [[Pet alloc] initPetWithId:10 andNamed:@"Upsy" withRace:@"Bouledogue Francais" ofSpeciesId:(NSUInteger)11 andSpeciesName:@"Dogs" bornIn:@"1999-07-05" createdOn:@"2012-02-04" availableUntil:@"2013-04" withDescription:@"THE MOST BEAUTIFUL DOG EVER" nexted:12 showedByVideo:video];
     
     Appointment *test_appointment = [[Appointment alloc] initWithPet:pet andUserNamed:@"Soso" withDetails:@"solene34.riou@gmail.com" andAlsoOnPhone:@"06 20 26 60 48" toTheDate:@"2013-06-3"];
     

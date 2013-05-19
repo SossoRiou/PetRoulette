@@ -10,6 +10,7 @@
 
 @implementation CustomCell
 
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     CGRect contentRect = self.contentView.bounds;
@@ -29,7 +30,6 @@
     [super setSelected:selected animated:animated];
     // Configure the view for the selected state
 }
-
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

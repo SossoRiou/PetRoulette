@@ -10,4 +10,9 @@
 
 @interface TestScrollViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITextField *phoneField;
+@property (weak, nonatomic) IBOutlet UITextField *mailField;
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+
 @end

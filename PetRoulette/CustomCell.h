@@ -8,13 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+
+/*
+ Class build custom in order to present avideo and its title into the pet video list
+ */
 @interface CustomCell : UITableViewCell
+
+//Labels and view
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 @property (weak, nonatomic) IBOutlet UILabel *primaryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondaryLabel;
 
 
-
+/* ------ Methods of class --------*/
 
 - (void)layoutSubviews;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;

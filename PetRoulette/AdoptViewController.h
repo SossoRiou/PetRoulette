@@ -12,19 +12,20 @@
 #import "Pet.h"
 #import <UIKit/UIKit.h>
 
+/*
+ Controller of first step in order to make appointment
+ Contains the shelter details
+ */
 @interface AdoptViewController : UIViewController
+
+/* ------ Parameters of class --------*/
 
 @property (strong, nonatomic) Pet *current_pet;
 
-//Label
+//Labels
 @property (weak, nonatomic) IBOutlet UILabel *shelterNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *shelterAddressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *shelterPhoneNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *presentationLabel;
-
-
-//@property (strong, nonatomic) ViewController *viewController;
-//@property (strong, nonatomic) PSYouTubeView *youTubeView;
-//@property (strong, nonatomic) MPMoviePlayerController *playerController;
 
 @end

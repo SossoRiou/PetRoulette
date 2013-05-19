@@ -10,13 +10,12 @@
 #import "SingleVideoViewController.h"
 #import "CustomCell.h"
 #import "Video.h"
-//#import "PSYouTubeView.h"
 #import "LBYouTubePlayerController.h"
+#import "ViewController.h"
 #import "VideosTableViewController.h"
 
 @interface VideosTableViewController ()
 
-@property (strong, nonatomic) LBYouTubePlayerController *player;
 
 //URL pour voir la premiere image d'une video
 //http://img.youtube.com/vi/FMVVDm1mwvM/0.jpg
@@ -53,13 +52,6 @@
                               otherButtonTitles:@"OK",nil];
         [alert show];
     }
-
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,24 +62,38 @@
 
 #pragma mark - Table view data source
 
+/*
+ Return the number of section in the table view given in parameters
+ Put one section in table view
+ */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
     return 1;
 }
 
+/*
+ Return the number of rows needed
+ There is as much rows as videos in the pet video list.
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
+    //Return the number of rows in the section.
     if(self.current_pet){
         return self.current_pet.pet_videoList.count;
     }
     else return 0;
 }
+
+/*
+ Return the heigh of the row selected at the index given as parameter
+ Here we want it to be 100
+ */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 100;
 }
+
 /*
  We can have some url such as http://www.youtube.com/embed/p8mzlHiFDA0 or such as http://www.youtube.com/watch?v=p8mzlHiFDA0
  Allows us have the image of the video
@@ -162,6 +168,10 @@
     return url_final;
 }
 
+/*
+ Method called when a cell is selected
+ Behavior wanted when a cell is selected
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -170,18 +180,15 @@
     if (cell == nil){        
         cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-        
-    NSString *url_final = [self convertYouTubeURLToImageYouTubeURL:[[self.video_list objectAtIndex:indexPath.row] video_url]];
-     NSURL *youTubeURL = [NSURL URLWithString:url_final];
     
+    //We get the first image of the youtube video
+    NSString *url_final = [self convertYouTubeURLToImageYouTubeURL:[[self.video_list objectAtIndex:indexPath.row] video_url]];
+    NSURL *youTubeURL = [NSURL URLWithString:url_final];
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:youTubeURL];
     cell.myImageView.image = [UIImage imageWithData:imageData];
     
-    //for(int i = 0 ; i<10000 ; i++){
-        
-    //}
-    
-    cell.primaryLabel.text = [NSString stringWithFormat:@"VIDEO NUMERO %ld", (long)indexPath.row+1];
+    //Put the title on primary text and the pet name on second label
+    cell.primaryLabel.text = [[self.video_list objectAtIndex:indexPath.row] title];
     cell.secondaryLabel.text = self.current_pet.pet_name;
 
     return cell;
@@ -230,18 +237,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*//TEST
-    //Really short video -> for test
-    NSURL *test_youTubeURL = [NSURL URLWithString:@"http://www.youtube.com/watch?v=wXw6znXPfy4"];
-    self.player = [[LBYouTubePlayerController alloc] initWithYouTubeURL:test_youTubeURL quality:LBYouTubeVideoQualityLarge];
-
-    
-    self.player.delegate = self;
-    self.player.view.frame = CGRectMake(0.0f, 0.0f, 200.0f, 200.0f);
-    self.player.view.center = self.view_video.center;
-    [self.view_video addSubview:self.player.view];
-    */
-     
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -249,54 +244,36 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-    
-    
-    /* TEST
-    TestViewController *test = [[TestViewController alloc] initWithNibName:@"Nib name" bundle:nil];
-    
-    //transform the url of the current pet if it is needed to the good way
-    NSString *url_final = [self convertYouTubeURLToGoodFormat:[[self.video_list objectAtIndex:indexPath.row] video_url]];
-    
-    //NSLog(@"L'URL FINAL EST LE SUIVANT : %@", url_final);
-    NSURL *youTubeURL = [NSURL URLWithString:url_final];
-    
-    test.url_video = youTubeURL;
-    
-    [self.navigationController pushViewController:test animated:YES];
-    */
-   
-     
 }
+
 /*
  Method called when an action on one of the button is made
  @param segue corespond to the link between the button and the target view
  @param id correspond to the sender button
- 
+ */
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    //We identify what kind of link is concerned
-    if ([segue.identifier isEqualToString:@"playVideoPush"]){
+    if ([segue.identifier isEqualToString:@"MainMenu"]){
         
         //We get the target view controller
-        //SingleVideoViewController *singleVideoViewController = [segue destinationViewController];
-       
-        TestViewController *singleVideoViewController = [segue destinationViewController];
+        ViewController *menuViewController = [segue destinationViewController];
         
+        //we get the index corresponding to sender
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         
-       NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        
-        //We send the details we want : here we give the url video
-        if (self.current_pet){
+        if (self.current_pet){ //we send the url of the video we want to play, the current pet, and the player
             
             //transform the url of the current pet if it is needed to the good way
             NSString *url_final = [self convertYouTubeURLToGoodFormat:[[self.video_list objectAtIndex:indexPath.row] video_url]];
-            
             //NSLog(@"L'URL FINAL EST LE SUIVANT : %@", url_final);
             NSURL *youTubeURL = [NSURL URLWithString:url_final];
             
-            singleVideoViewController.url_video = youTubeURL;
+            menuViewController.controller = self.player;
+            menuViewController.currentPet = self.current_pet;
+            menuViewController.url_play = youTubeURL;
+            menuViewController.state = 2; //to indicate it is for other video
         }
     }
-}*/
+}
 
 @end

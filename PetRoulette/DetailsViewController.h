@@ -6,13 +6,21 @@
 //  Copyright (c) 2013 IGPROJ-MAC01. All rights reserved.
 //
 
+#import "LBYouTubePlayerController.h"
 #import "Pet.h"
 #import <UIKit/UIKit.h>
 
+/*
+ Controller of details view
+ Composed by pet details
+ */
 @interface DetailsViewController : UIViewController
 
+/* ------ Parameters of class --------*/
 
 @property (strong, nonatomic) Pet *current_pet;
+@property (strong, nonatomic) LBYouTubePlayerController *player;
+
 
 //Labels
 @property (weak, nonatomic) IBOutlet UILabel *petNameLabel;
@@ -22,23 +30,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *availableUntilLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberVideosLabel;
+
+/* ------ Methods of class --------*/
+
 - (IBAction)adoptAction:(id)sender;
 - (IBAction)othersVideosAction:(id)sender;
 
 @end
-
-
-/*
-
- // Pop-up mechanism
- UIAlertView *alert = [[UIAlertView alloc]
- initWithTitle: @"VICTOIRE A TOI!!!!"
- message: [self.game playerAndScoreOfGame]
- delegate: nil
- cancelButtonTitle:@"I'm the best"
- otherButtonTitles:nil];
- [alert show];
- }
-
-
-*/

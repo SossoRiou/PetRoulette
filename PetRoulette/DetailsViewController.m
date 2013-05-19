@@ -10,10 +10,6 @@
 #import "AdoptViewController.h"
 #import "DetailsViewController.h"
 
-@interface DetailsViewController ()
-
-@end
-
 @implementation DetailsViewController
 
 //Automatic method
@@ -34,6 +30,7 @@
     [super viewDidLoad];
     
     if (self.current_pet){
+        
         //Labels get their contents
         self.petNameLabel.text = self.current_pet.pet_name;
         self.descriptionLabel.text = self.current_pet.pet_description;
@@ -75,17 +72,16 @@
     else if([segue.identifier isEqualToString:@"othersVideosPush"]){
         //We get the target view controller
         VideosTableViewController *videoTableViewController = [segue destinationViewController];
-        
-        //UITabBarController *tabBarController = [segue destinationViewController];
-        
+                
         //We send the details we want : here we give it the current pet
         if (self.current_pet){
-           // NSLog(@"ON ESSAYE DE LIRE DANS VIDEOTABLECONTROLLER POUR TRANSMETTRE LE PET!! NORMALEMENT LE PET EST VIDE : %@", videoTableViewController.current_pet);
             videoTableViewController.current_pet = self.current_pet;
+            
+            //Test
+            videoTableViewController.player = self.player;
         }
     }
 }
-
 
 //Automatic method
 - (void)didReceiveMemoryWarning

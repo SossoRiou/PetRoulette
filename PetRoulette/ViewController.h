@@ -5,10 +5,16 @@
 //  Created by IGPROJ-MAC01 on 23/04/13.
 //  Copyright (c) 2013 IGPROJ-MAC01. All rights reserved.
 //
-
+#import "LBYouTubePlayerController.h"
+#import "Pet.h"
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 
+/*
+ Main Controller
+ Is composed by a video and next, adopt, donate button
+ @author Solene Riou
+ */
 @interface ViewController : UIViewController
 
 /* ------ Parameters of class --------*/
@@ -16,6 +22,21 @@
 //Labels
 @property (weak, nonatomic) IBOutlet UILabel *nextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+//url of the video currently played when the view is loaded
+@property (strong, nonatomic) NSURL *url_play;
+
+//View
+@property (weak, nonatomic) IBOutlet UIView *videoView;
+
+//Actual Pet that the video describe 
+@property (strong, nonatomic) Pet *currentPet;
+
+//PlayerController that handle the video playing
+@property (strong, nonatomic) LBYouTubePlayerController *controller;
+
+//Allows us to make the difference between the end of a video when the user has waited too much than a next action
+@property (nonatomic) BOOL state; //0 means end of video, 1 means Next, 2 means others Videos
 
 
 /* ------ Methods of class --------*/
@@ -43,14 +64,10 @@
 
 
 /*
- Method allowing us to have the dimensions of the main screen and return the rect with that dimensions
+ Methods that load the main view contents with the other video url
+ Fill all the label contents with the former pet details
+ Load and play the video
  */
--(CGRect)resizeDynamically;
-
-//View
-@property (weak, nonatomic) IBOutlet UIView *videoView;
-
-//Actual Pet tthat the video describe and that the details talk about
-@property (strong, nonatomic) Pet *currentPet;
+-(void)updateOtherVideoView;
 
 @end

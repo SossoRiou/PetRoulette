@@ -43,19 +43,14 @@
 }
 
 /*
- Metho called when the adopt view is loaded
+ Method called when the adopt view is loaded
  */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //NSLog(@"THE CURRENT VIDEO IS %@", self.currentPet.pet_currentVideo);
-    //if (self.youTubeView){
-      //  [self.youTubeView.moviePlayerController play];
-    //}
-   // NSLog(@"LE MP MOVIE PLAYER ISSU DU VIEW CONTROLLER IS : %@", self.playerController);
-    
+        
     if (self.current_pet){ //the current pet must have been initialized with the former controller
+        
         //Labels gets their contents
         self.shelterNameLabel.text = self.current_pet.shelter_name;
         self.shelterAddressLabel.text = self.current_pet.shelter_address;
@@ -97,6 +92,7 @@
         }
     }
 }
+
 
 //Automatic method
 - (void)didReceiveMemoryWarning

@@ -16,16 +16,6 @@
 #import "DonateViewController.h"
 #import "ViewController.h"
 
-@interface ViewController ()
-
-@property (strong, nonatomic) LBYouTubePlayerController *controller;
-
-//Allows us to make the difference between the end of a video when the user has waited too much than a next action
-@property (nonatomic) BOOL state; //0 means end of video, 1 means Next
-
-
-@end
-
 @implementation ViewController
 
 /*
@@ -36,13 +26,14 @@
     
     self.state = 1;
     
-    //[self.youtubeView.moviePlayerController stop];
+    //Step one : the current video must stop
     [self.controller stop];
     
-    //Initialisation of PetParser wich will do the random API call
+    //Step two : reselect an other pet
+    //Initialisation of PetParser wich will do the next API call
     PetParser *petParser = [[PetParser alloc] init];
     
-    //API call
+    //next API call
     self.currentPet = [petParser next];
     
     if (self.currentPet){
@@ -52,38 +43,13 @@
         self.nameLabel.text = self.currentPet.pet_name;
         [self.nameLabel setHidden:false];
 
-        
-        //transform the url of the current pet if needed
+        //Transform the url of the current pet if needed
         NSString *url_final = [self convertYouTubeURLToGoodFormat:petParser.current_pet.pet_currentVideo.video_url];
         NSURL *youTubeURL = [NSURL URLWithString:url_final];
-        
-        
-        if (self.controller){
-            [self.controller.view removeFromSuperview];
-            self.controller = nil;
-        }
-    
-        //We load and play the video associated to youtube url
-       //[self.youtubeView loadAndPlayVideoWithUrl:youTubeURL];
-         
-         
-        LBYouTubePlayerController *cont = [[LBYouTubePlayerController alloc] initWithYouTubeURL:youTubeURL quality:LBYouTubeVideoQualityLarge];
-        self.controller = cont;
-        
-        //Initialization of good view size
-        CGFloat size = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? 250 : 500;
-        CGRect videoRect = CGRectMake(0, 0, size, size);
-        self.controller.view.frame = videoRect;
-        //self.controller.view.frame = self.videoView.bounds;
-        //self.videoView.backgroundColor = [UIColor redColor];
-        //self.controller.view.center = self.videoView.center;
-        [self.videoView addSubview:self.controller.view];
-        
-        
-        
-        //ViewController become the observer of the video playing
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayBackDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
-         
+        self.url_play = youTubeURL;
+            
+        //We load and play the video associated to the new pet selected
+       [self.controller loadAndPlayVideoAtUrl:self.url_play andQuality:LBYouTubeVideoQualityLarge];
     }
 }
 
@@ -94,17 +60,163 @@
 {
     [super viewDidLoad];
     
-    self.state = 0;
-    
     //Labels get their contents
     [self.nameLabel setHidden:true];
+  
+    if (!self.controller) {
+        
+        //initialization of the player controller
+        self.controller = [[LBYouTubePlayerController alloc] initWithQuality:LBYouTubeVideoQualityLarge];
+        
+        //Initialization of good view size
+        CGFloat size = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? 250 : 500;
+        CGRect videoRect = CGRectMake(0, 0, size, size);
+        self.controller.view.frame = videoRect;
+   
+        //link the view to the controller view
+        [self.videoView addSubview:self.controller.view];
+        
+        //ViewController become the observer of the video playing
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayBackDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+    }
+
+    if (self.state == 2){ //case of otherVideo
+        [self.videoView addSubview:self.controller.view];
+        [self updateOtherVideoView];
+        self.state = 0;
+    }
+    else { //at the loading of the view
+        self.state = 0;
+        [self updateVideoView];
+    }
+}
+
+/*
+ Methods that load the main view contents with the other video url
+ Fill all the label contents with the former pet details
+ Load and play the video
+ */
+-(void)updateOtherVideoView{
     
-    //Initialization of good view size
-    //CGFloat size = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? 250 : 500;
-    //CGRect videoRect = CGRectMake(0, 0, size, size);
+    //load and play the video from the url wanted
+    [self.controller loadAndPlayVideoAtUrl:self.url_play andQuality:LBYouTubeVideoQualityLarge];
     
-    //load the main view contents : the pet informations and video
-    [self updateVideoView];
+    //Labels get their contents
+    self.nextLabel.text = [NSString stringWithFormat:@"Nexted %lu time", (unsigned long)self.currentPet.pet_nextCount];
+    self.nameLabel.text = self.currentPet.pet_name;
+    [self.nameLabel setHidden:false];
+}
+
+/*
+ Methods that load the main view contents ; make the Random call
+ Fill all the label contents with the pet details from the model
+ Load and play the main video
+ */
+-(void)updateVideoView{
+    
+    //Initialisation of PetParser wich will do the random API call
+    PetParser *petParser = [[PetParser alloc] init];
+    //Random API call
+    self.currentPet = [petParser random];
+    
+    
+    //Labels get their contents
+    self.nextLabel.text = [NSString stringWithFormat:@"Nexted %lu time", (unsigned long)self.currentPet.pet_nextCount];
+    self.nameLabel.text = self.currentPet.pet_name;
+    [self.nameLabel setHidden:false];
+        
+    /*Really short video -> for test
+     NSURL *youTubeURL = [NSURL URLWithString:@"http://www.youtube.com/watch?v=wXw6znXPfy4"];
+    */
+    
+    //Transform the url of the current pet if it is needed to the good way
+    NSString *url_final = [self convertYouTubeURLToGoodFormat:self.currentPet.pet_currentVideo.video_url];
+    NSURL *youTubeURL = [NSURL URLWithString:url_final];
+    self.url_play = youTubeURL;
+   
+    //load and play the video from the url of the main video
+    [self.controller loadAndPlayVideoAtUrl:self.url_play andQuality:LBYouTubeVideoQualityLarge];
+}
+
+/*
+ Describe the behavior to adopt when the video finished to play
+ Depends to the reason why the video has stopped : if 
+ @param notification is the way of notify the controller
+ */
+-(void)moviePlayBackDidFinish:(NSNotification*)notification{
+    
+    //We get the MPMoviePlayerController that send the notification (easy here, we have only one)
+    MPMoviePlayerController *player = [notification object];
+    
+    //Test in order to know the reason of the movie to finish
+    int reason = [[[notification userInfo] valueForKey:MPMoviePlayerPlaybackDidFinishNotification] longLongValue];
+    if (reason == MPMovieFinishReasonPlaybackEnded) {
+        NSLog(@"THE PLAYBACK ENDED");
+    }
+    else if (reason == MPMovieFinishReasonUserExited){
+        NSLog(@"THE USER EXITED");
+    }
+    else if (reason == MPMovieFinishReasonPlaybackError){
+        NSLog(@"THERE IS AN ERROR");
+    }
+    
+    //We retire the controller from observing it
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:player];
+    
+    
+    if ([player respondsToSelector:@selector(setFullscreen:animated:)]) {
+        
+        //If the video has stopped because it's finished, we reloaded the main view to get a new random API Call and have an other video
+        if (self.state == 0)
+            [self updateVideoView];
+        //else it's mean it's a next action so we do not do nothing
+    }
+}
+
+/*
+ Method called when an action on one of the button is made
+ @param segue corespond to the link between the button and the target view
+ @param id correspond to the sender button 
+ */
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    //[self.youtubeView.moviePlayerController pause];
+    [self.controller pause];
+    
+    //We identify what kind of link is concerned
+    if ([segue.identifier isEqualToString:@"DetailsPush"]){
+        
+        //We get the target view controller
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        
+        //We send the details we want : here we give it the current pet
+        if (self.currentPet){
+            detailsViewController.current_pet = self.currentPet;
+            
+            //Test
+            //[self.videoView removeFromSuperview];
+            detailsViewController.player = self.controller;
+        }
+        
+    }
+    else if([segue.identifier isEqualToString:@"AdoptPush"]){
+
+        //We get the target view controller
+        AdoptViewController *adoptViewController = [segue destinationViewController];
+        
+        //We send the details we want : here we give it the current pet
+        if (self.currentPet){
+            adoptViewController.current_pet = self.currentPet;
+        }
+    }
+    else{ //DonatePush //NOT IMPLEMENTED YET
+        
+        DonateViewController *donateViewController = [segue destinationViewController];
+        //We send the details we want : here we give it the current pet
+        if (self.currentPet){
+            donateViewController.current_pet = self.currentPet;
+        }
+    }
 }
 
 /*
@@ -150,140 +262,6 @@
         }
     }
     return url_final;
-}
-
-/*
- Methods that load the main view contents ; make the Random call
- Fill all the label contents with the pet details from the model
- Load and play the main video
- */
--(void)updateVideoView{
-    
-    //Initialisation of PetParser wich will do the random API call
-    PetParser *petParser = [[PetParser alloc] init];
-    //Random API call
-    self.currentPet = [petParser random];
-    
-    //Labels get their contents
-    self.nextLabel.text = [NSString stringWithFormat:@"Nexted %lu time", (unsigned long)self.currentPet.pet_nextCount];
-    self.nameLabel.text = self.currentPet.pet_name;
-    [self.nameLabel setHidden:false];
-        
-    /*Really short video -> for test
-     NSURL *youTubeURL = [NSURL URLWithString:@"http://www.youtube.com/watch?v=wXw6znXPfy4"];
-    */
-    
-    //transform the url of the current pet if it is needed to the good way
-    NSString *url_final = [self convertYouTubeURLToGoodFormat:self.currentPet.pet_currentVideo.video_url];
-    NSURL *youTubeURL = [NSURL URLWithString:url_final];
-
-    //We load and play the video associated to the former youtube url
-    LBYouTubePlayerController *cont = [[LBYouTubePlayerController alloc] initWithYouTubeURL:youTubeURL quality:LBYouTubeVideoQualityLarge];
-    //cont.delegate = self;
-    
-    self.controller = cont;
-
-    
-    //Initialization of good view size
-    CGFloat size = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? 250 : 500;
-    CGRect videoRect = CGRectMake(0, 0, size, size);
-    self.controller.view.frame = videoRect;
-    //self.controller.view.frame = self.videoView.bounds;
-    //self.controller.view.center = self.videoView.center;
-    [self.videoView addSubview:self.controller.view];
-    
-    //ViewController become the observer of the video playing
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayBackDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
-}
-
-/*
- Describe the behavior to adopt when the video finished to play
- Depends to the reason why the video has stopped : if 
- @param notification is the way of notify the controller
- */
--(void)moviePlayBackDidFinish:(NSNotification*)notification{
-    
-    NSLog(@"THE MOVIE HAS FINISHED ");
-    //NSLog(@"THE CURRENT VIDEO IS %@", self.currentPet.pet_currentVideo);
-    
-    //we get the MPMoviePlayerController that send the notification (easy here, we have only one)
-    MPMoviePlayerController *player = [notification object];
-    
-    //TEST
-    /*
-    if ([player playbackState]==0){
-        NSLog(@"THE MOVIE IS PAUSED");
-    }*/
-    
-    
-        //We retire the controller from observing it (it's done)
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:player];
-    
-
-        if ([player respondsToSelector:@selector(setFullscreen:animated:)]) {
-            
-            //If the video has stopped because it's finished, we reloaded the main view to get a new random API Call and have an other video
-            if (self.state != 1)
-            [self updateVideoView];
-            //else it's mean it's a next action so we do not do nothing
-        }
-}
-
-/*
- Method called when an action on one of the button is made 
- @param segue corespond to the link between the button and the target view
- @param id correspond to the sender button 
- */
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    //[self.youtubeView.moviePlayerController pause];
-    [self.controller pause];
-    
-    //We identify what kind of link is concerned
-    if ([segue.identifier isEqualToString:@"DetailsPush"]){
-        
-        //We get the target view controller
-        DetailsViewController *detailsViewController = [segue destinationViewController];
-        
-        //We send the details we want : here we give it the current pet
-        if (self.currentPet){
-            detailsViewController.current_pet = self.currentPet;
-        }
-        
-    }
-    else if([segue.identifier isEqualToString:@"AdoptPush"]){
-
-        //We get the target view controller
-        AdoptViewController *adoptViewController = [segue destinationViewController];
-        
-        //We send the details we want : here we give it the current pet
-        if (self.currentPet){
-            adoptViewController.current_pet = self.currentPet;
-        }
-    }
-    else{ //DonatePush //NOT IMPLEMENTED YET
-        
-        DonateViewController *donateViewController = [segue destinationViewController];
-        //We send the details we want : here we give it the current pet
-        if (self.currentPet){
-            donateViewController.current_pet = self.currentPet;
-        }
-    }
-}
-
-/*
- Method allowing us to have the dimensions of the main screen and return the rect with that dimensions
- */
--(CGRect)resizeDynamically{
-    
-    
-    //CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    //CGFloat height = [UIScreen mainScreen].bounds.size.height;
-    //CGRect final =  CGRectMake(10, 10, height-20, width-20);
-    
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    
-    return screenBounds;
 }
 
 

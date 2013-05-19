@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED0EDE441747D4A500552636 /* TestScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0EDE431747D4A500552636 /* TestScrollViewController.m */; };
 		ED108D8C1733AE63000448A2 /* AdoptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED108D8B1733AE63000448A2 /* AdoptViewController.m */; };
 		ED108D8F1733AE6E000448A2 /* DonateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED108D8E1733AE6E000448A2 /* DonateViewController.m */; };
+		ED2C2B7017451F8100E23DE0 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2C2B6E17451F8100E23DE0 /* MainStoryboard_iPhone.storyboard */; };
 		ED89D7EF1733BDB8007CEDDA /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED89D7EE1733BDB8007CEDDA /* DateViewController.m */; };
 		ED89D7F81733FAEA007CEDDA /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED89D7F71733FAEA007CEDDA /* UserViewController.m */; };
 		ED8D318D1736B22D0092DFF7 /* VideosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D318C1736B22D0092DFF7 /* VideosTableViewController.m */; };
 		ED8D31931736D26E0092DFF7 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D31921736D26E0092DFF7 /* CustomCell.m */; };
+		ED91B6ED174583900029D014 /* JsonAppointmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91B6EC174583900029D014 /* JsonAppointmentModel.m */; };
+		ED91B6F017458F500029D014 /* UserEmailPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91B6EF17458F500029D014 /* UserEmailPhoneViewController.m */; };
 		ED920A9D174112470072315D /* LBYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = ED920A88174112470072315D /* LBYouTubeExtractor.m */; };
 		ED920A9E174112470072315D /* LBYouTubePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED920A8A174112470072315D /* LBYouTubePlayerController.m */; };
 		ED9263111726DE6600569E0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263101726DE6600569E0F /* UIKit.framework */; };
@@ -24,7 +28,6 @@
 		ED9263231726DE6600569E0F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9263221726DE6600569E0F /* Default.png */; };
 		ED9263251726DE6600569E0F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9263241726DE6600569E0F /* Default@2x.png */; };
 		ED9263271726DE6600569E0F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9263261726DE6600569E0F /* Default-568h@2x.png */; };
-		ED92632A1726DE6600569E0F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9263281726DE6600569E0F /* MainStoryboard_iPhone.storyboard */; };
 		ED9263301726DE6600569E0F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED92632F1726DE6600569E0F /* ViewController.m */; };
 		ED9263381726DE6600569E0F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263371726DE6600569E0F /* SenTestingKit.framework */; };
 		ED9263391726DE6600569E0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263101726DE6600569E0F /* UIKit.framework */; };
@@ -39,7 +42,6 @@
 		ED9263611726DEA100569E0F /* PetParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9263591726DEA100569E0F /* PetParser.m */; };
 		ED9263621726DEA100569E0F /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = ED92635B1726DEA100569E0F /* Video.m */; };
 		ED9263641726E15E00569E0F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9263631726E15E00569E0F /* MediaPlayer.framework */; };
-		EDA0A02517427A200041A424 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA0A02417427A200041A424 /* TestViewController.m */; };
 		EDD45B2717301126007D4E1E /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD45B2617301126007D4E1E /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -54,10 +56,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED0EDE421747D4A500552636 /* TestScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestScrollViewController.h; sourceTree = "<group>"; };
+		ED0EDE431747D4A500552636 /* TestScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestScrollViewController.m; sourceTree = "<group>"; };
 		ED108D8A1733AE63000448A2 /* AdoptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdoptViewController.h; sourceTree = "<group>"; };
 		ED108D8B1733AE63000448A2 /* AdoptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdoptViewController.m; sourceTree = "<group>"; };
 		ED108D8D1733AE6E000448A2 /* DonateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonateViewController.h; sourceTree = "<group>"; };
 		ED108D8E1733AE6E000448A2 /* DonateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonateViewController.m; sourceTree = "<group>"; };
+		ED2C2B6F17451F8100E23DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = PetRoulette/en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		ED89D7ED1733BDB8007CEDDA /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
 		ED89D7EE1733BDB8007CEDDA /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
 		ED89D7F61733FAEA007CEDDA /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
@@ -66,6 +71,10 @@
 		ED8D318C1736B22D0092DFF7 /* VideosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosTableViewController.m; sourceTree = "<group>"; };
 		ED8D31911736D26E0092DFF7 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		ED8D31921736D26E0092DFF7 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		ED91B6EB174583900029D014 /* JsonAppointmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonAppointmentModel.h; sourceTree = "<group>"; };
+		ED91B6EC174583900029D014 /* JsonAppointmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonAppointmentModel.m; sourceTree = "<group>"; };
+		ED91B6EE17458F500029D014 /* UserEmailPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserEmailPhoneViewController.h; sourceTree = "<group>"; };
+		ED91B6EF17458F500029D014 /* UserEmailPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEmailPhoneViewController.m; sourceTree = "<group>"; };
 		ED920A86174112470072315D /* LBYouTube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTube.h; sourceTree = "<group>"; };
 		ED920A87174112470072315D /* LBYouTubeExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubeExtractor.h; sourceTree = "<group>"; };
 		ED920A88174112470072315D /* LBYouTubeExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubeExtractor.m; sourceTree = "<group>"; };
@@ -84,7 +93,6 @@
 		ED9263221726DE6600569E0F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		ED9263241726DE6600569E0F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		ED9263261726DE6600569E0F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		ED9263291726DE6600569E0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		ED92632E1726DE6600569E0F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		ED92632F1726DE6600569E0F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ED9263361726DE6600569E0F /* PetRouletteTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetRouletteTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,8 +116,6 @@
 		ED92635A1726DEA100569E0F /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Video.h; path = ../../../PetRoulette/Video.h; sourceTree = "<group>"; };
 		ED92635B1726DEA100569E0F /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Video.m; path = ../../../PetRoulette/Video.m; sourceTree = "<group>"; };
 		ED9263631726E15E00569E0F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		EDA0A02317427A200041A424 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		EDA0A02417427A200041A424 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		EDD45B2517301126007D4E1E /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		EDD45B2617301126007D4E1E /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,9 +194,9 @@
 			children = (
 				EDB80FA217294FEA0008D7EB /* Model */,
 				EDB80FA317294FF30008D7EB /* Controller */,
+				ED2C2B6E17451F8100E23DE0 /* MainStoryboard_iPhone.storyboard */,
 				ED92631F1726DE6600569E0F /* AppDelegate.h */,
 				ED9263201726DE6600569E0F /* AppDelegate.m */,
-				ED9263281726DE6600569E0F /* MainStoryboard_iPhone.storyboard */,
 				ED9263171726DE6600569E0F /* Supporting Files */,
 			);
 			path = PetRoulette;
@@ -253,6 +259,8 @@
 				EDE524141734FD8800171D1F /* Details */,
 				EDE524151734FDA500171D1F /* Adopt */,
 				EDE524161734FDDB00171D1F /* Donate */,
+				ED0EDE421747D4A500552636 /* TestScrollViewController.h */,
+				ED0EDE431747D4A500552636 /* TestScrollViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -260,6 +268,8 @@
 		EDB80FA4172950050008D7EB /* Parser */ = {
 			isa = PBXGroup;
 			children = (
+				ED91B6EB174583900029D014 /* JsonAppointmentModel.h */,
+				ED91B6EC174583900029D014 /* JsonAppointmentModel.m */,
 				ED9263521726DEA100569E0F /* JsonDetailsModel.h */,
 				ED9263531726DEA100569E0F /* JsonDetailsModel.m */,
 				ED9263541726DEA100569E0F /* JsonRandomModel.h */,
@@ -292,10 +302,6 @@
 		EDE524141734FD8800171D1F /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				EDA0A02317427A200041A424 /* TestViewController.h */,
-				EDA0A02417427A200041A424 /* TestViewController.m */,
-				ED89D7F61733FAEA007CEDDA /* UserViewController.h */,
-				ED89D7F71733FAEA007CEDDA /* UserViewController.m */,
 				EDD45B2517301126007D4E1E /* DetailsViewController.h */,
 				EDD45B2617301126007D4E1E /* DetailsViewController.m */,
 				ED8D318B1736B22D0092DFF7 /* VideosTableViewController.h */,
@@ -307,10 +313,14 @@
 		EDE524151734FDA500171D1F /* Adopt */ = {
 			isa = PBXGroup;
 			children = (
+				ED89D7F61733FAEA007CEDDA /* UserViewController.h */,
+				ED89D7F71733FAEA007CEDDA /* UserViewController.m */,
 				ED89D7ED1733BDB8007CEDDA /* DateViewController.h */,
 				ED89D7EE1733BDB8007CEDDA /* DateViewController.m */,
 				ED108D8A1733AE63000448A2 /* AdoptViewController.h */,
 				ED108D8B1733AE63000448A2 /* AdoptViewController.m */,
+				ED91B6EE17458F500029D014 /* UserEmailPhoneViewController.h */,
+				ED91B6EF17458F500029D014 /* UserEmailPhoneViewController.m */,
 			);
 			name = Adopt;
 			sourceTree = "<group>";
@@ -399,7 +409,7 @@
 				ED9263231726DE6600569E0F /* Default.png in Resources */,
 				ED9263251726DE6600569E0F /* Default@2x.png in Resources */,
 				ED9263271726DE6600569E0F /* Default-568h@2x.png in Resources */,
-				ED92632A1726DE6600569E0F /* MainStoryboard_iPhone.storyboard in Resources */,
+				ED2C2B7017451F8100E23DE0 /* MainStoryboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +463,9 @@
 				ED8D31931736D26E0092DFF7 /* CustomCell.m in Sources */,
 				ED920A9D174112470072315D /* LBYouTubeExtractor.m in Sources */,
 				ED920A9E174112470072315D /* LBYouTubePlayerController.m in Sources */,
-				EDA0A02517427A200041A424 /* TestViewController.m in Sources */,
+				ED91B6ED174583900029D014 /* JsonAppointmentModel.m in Sources */,
+				ED91B6F017458F500029D014 /* UserEmailPhoneViewController.m in Sources */,
+				ED0EDE441747D4A500552636 /* TestScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,20 +488,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		ED2C2B6E17451F8100E23DE0 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED2C2B6F17451F8100E23DE0 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		ED9263191726DE6600569E0F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				ED92631A1726DE6600569E0F /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		ED9263281726DE6600569E0F /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED9263291726DE6600569E0F /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		ED9263401726DE6600569E0F /* InfoPlist.strings */ = {

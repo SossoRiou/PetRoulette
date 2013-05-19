@@ -11,9 +11,12 @@
 
 @interface DateViewController ()
 
+//Requested date
 @property (strong, nonatomic) NSDate *date;
 
 @end
+
+
 
 @implementation DateViewController
 
@@ -33,14 +36,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.requestedDateLabel setHidden:true];
+    
+    //We hide and enable the send button as long as a valid date is not selected
+    [self.sendButton setHidden:TRUE]; 
+    self.sendButton.enabled = NO;
+    
     if (!self.current_appointment){
         NSLog(@"There is a problem, there is no appointment initialized !");
         // Pop-up
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle: @"Sorry but we have a problem"
                               message: @"There is a problem, there is no appointment initialized !"
-                              delegate: nil
+                              delegate: self
                               cancelButtonTitle:@"Back"
                               otherButtonTitles:nil];
         [alert show];
@@ -55,35 +62,11 @@
 }
 
 /*
+ Method called when Send button is pushed
  Corresponds to the send button
  The date is added (after being sure it's a valid one) to the appointment and the user can go to the next step
- @param id is the identifier of the send button
- 
-- (IBAction)sendAction:(id)sender {
-    //We get the chosen date
-    self.date = [self.datePicker date];
-    
-    //We must check if the date is not before the today date
-    NSDate *today = [NSDate date];
-    if ([self.date compare:today] == NSOrderedAscending){
-        //If it is : pop-up
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Sorry but we have a problem"
-                              message: @"The date is before today."
-                              delegate: nil
-                              cancelButtonTitle:@"Back"
-                              otherButtonTitles:nil];
-        [alert show];
-    }
-    //self.requestedDateLabel.text = [NSString stringWithFormat:@"Requested Date : %@", self.date];
-    self.current_appointment.requested_date = [NSString stringWithFormat:@"%@", self.date];
-    NSLog(@"YOU'VE CHOSE THE DATE : %@", self.current_appointment.requested_date);
-}*/
-
-/*
- Method called when Send button is pushed
- @param segue corespond to the link between the button and the target view
  @param id correspond to the sender button
+ @param segue corespond to the link between the button and the target view
  */
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -96,26 +79,60 @@
        if (self.current_appointment){
             userViewController.current_appointment = self.current_appointment;
         }
-        
-        //We get the chosen date
-        self.date = [self.datePicker date];
-        
-        //We must check if the date is not before the today date
-        NSDate *today = [NSDate date];
-        if ([self.date compare:today] == NSOrderedAscending){
-            //If it is : pop-up
-            UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle: @"Sorry but we have a problem"
-                                  message: @"The date is before today."
-                                  delegate: nil
-                                  cancelButtonTitle:@"Back"
-                                  otherButtonTitles:nil];
-            [alert show];
-        }
-        //self.requestedDateLabel.text = [NSString stringWithFormat:@"Requested Date : %@", self.date];
+    }
+}
+
+/*
+ Method called when ok button is selected
+ Allow the user, if a name is provided, to go to the next step in order to make an appointment
+ */
+- (IBAction)okAction:(id)sender {
+    
+    //We read the selected date on the datepicker
+    NSDate *selected_date = [self.datePicker date];
+    
+    if ([self isDateIsEarlierThanToday:selected_date]){
+        //If it is : pop-up
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Sorry but we have a problem"
+                              message: @"The date is before today."
+                              delegate: self
+                              cancelButtonTitle:@"Back"
+                              otherButtonTitles:nil];
+        [alert show];
+        [self.requestedDateLabel setHidden:NO];
+        self.requestedDateLabel.text = @"THE DATE IS BEFORE TODAY";
+    }
+    else { //the date is good
+        self.date = selected_date;
+        self.requestedDateLabel.text = [NSString stringWithFormat:@"Requested Date : %@", self.date];
         self.current_appointment.requested_date = [NSString stringWithFormat:@"%@", self.date];
         NSLog(@"YOU'VE CHOSE THE DATE : %@", self.current_appointment.requested_date);
+        
+        //We put enable the send button
+        self.sendButton.enabled = YES;
+        [self.sendButton setHidden:NO];
     }
+}
+
+/*
+ Help us to see if a date is earlier than today
+ Say True if the date is earlier than today, else false.
+ */
+- (BOOL)isDateIsEarlierThanToday:(NSDate *)date
+{
+    NSDate* enddate = date;
+    NSDate* today_date = [NSDate date];
+    NSTimeInterval distanceBetweenDates = [enddate timeIntervalSinceDate:today_date];
+    double secondsInMinute = 60;
+    NSInteger secondsBetweenDates = distanceBetweenDates / secondsInMinute;
+    
+    if (secondsBetweenDates == 0)
+        return true;
+    else if (secondsBetweenDates < 0)
+        return true;
+    else
+        return false;
 }
 
 @end

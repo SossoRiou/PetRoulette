@@ -33,9 +33,8 @@
 
 + (id) objectWithDictionary:(NSDictionary*)dictionary
 {
-   /* id obj = [[[Api alloc] initWithDictionary:dictionary] autorelease];
+   id obj = [[AppointmentApi alloc] initWithDictionary:dictionary];
     return obj;
-    */
 }
 
 - (id) initWithDictionary:(NSDictionary*)dictionary
@@ -76,10 +75,8 @@
 
 + (id) objectWithDictionary:(NSDictionary*)dictionary
 {
-    /*
-    id obj = [[[ModelQuery alloc] initWithDictionary:dictionary] autorelease];
+    id obj = [[ModelAppointmentQuery alloc] initWithDictionary:dictionary];
     return obj;
-     */
 }
 
 - (id) initWithDictionary:(NSDictionary*)dictionary

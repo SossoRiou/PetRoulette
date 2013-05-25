@@ -27,5 +27,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *shelterAddressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *shelterPhoneNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *presentationLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *adoptLogoView;
+@property (weak, nonatomic) IBOutlet UIImageView *designView;
+@property (weak, nonatomic) IBOutlet UIButton *dateButton;
 
 @end

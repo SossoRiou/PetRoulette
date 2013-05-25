@@ -37,9 +37,22 @@
 {
     [super viewDidLoad];
     
+    //Set up design
+    [self.adoptLogoView setContentMode:UIViewContentModeScaleAspectFit];
+    self.adoptLogoView.image = [UIImage imageNamed:@"adopt_transparent.png"];
+    
+
+    [[self.okButton imageView] setContentMode:UIViewContentModeScaleAspectFit];
+    [self.okButton setBackgroundImage:[UIImage imageNamed:@"OK_blue.PNG"] forState:UIControlStateNormal];
+    
+    [[self.sendButton imageView] setContentMode:UIViewContentModeScaleAspectFit];
+    [self.sendButton setBackgroundImage:[UIImage imageNamed:@"SEND_black.PNG"] forState:UIControlStateNormal];
+    
     //We hide and enable the send button as long as a valid date is not selected
     [self.sendButton setHidden:TRUE]; 
     self.sendButton.enabled = NO;
+    
+    
     
     if (!self.current_appointment){
         NSLog(@"There is a problem, there is no appointment initialized !");
@@ -73,11 +86,11 @@
     //We identify what kind of link is concerned
     if ([segue.identifier isEqualToString:@"SendPush"]){
         //We get the target view controller
-        UserViewController *userViewController = [segue destinationViewController];
+        UserEmailPhoneViewController *userViewController = [segue destinationViewController];
     
         //We send the details we want : here we give it the current pet
        if (self.current_appointment){
-            userViewController.current_appointment = self.current_appointment;
+            userViewController.current_app = self.current_appointment;
         }
     }
 }
@@ -100,12 +113,9 @@
                               cancelButtonTitle:@"Back"
                               otherButtonTitles:nil];
         [alert show];
-        [self.requestedDateLabel setHidden:NO];
-        self.requestedDateLabel.text = @"THE DATE IS BEFORE TODAY";
     }
     else { //the date is good
         self.date = selected_date;
-        self.requestedDateLabel.text = [NSString stringWithFormat:@"Requested Date : %@", self.date];
         self.current_appointment.requested_date = [NSString stringWithFormat:@"%@", self.date];
         NSLog(@"YOU'VE CHOSE THE DATE : %@", self.current_appointment.requested_date);
         

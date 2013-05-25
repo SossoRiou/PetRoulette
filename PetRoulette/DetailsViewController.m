@@ -29,6 +29,16 @@
 {
     [super viewDidLoad];
     
+    //Set up design
+    [self.viewMoreLogoView setContentMode:UIViewContentModeScaleAspectFit];
+    self.viewMoreLogoView.image = [UIImage imageNamed:@"view_more.png"];
+    
+    [[self.othersVideosButton imageView] setContentMode:UIViewContentModeScaleAspectFit];
+    [self.othersVideosButton setBackgroundImage:[UIImage imageNamed:@"others_videos.PNG"] forState:UIControlStateNormal];
+    
+    [[self.adoptButton imageView] setContentMode:UIViewContentModeScaleAspectFit];
+    [self.adoptButton setBackgroundImage:[UIImage imageNamed:@"adopt_transparent.png"] forState:UIControlStateNormal];
+    
     if (self.current_pet){
         
         //Labels get their contents

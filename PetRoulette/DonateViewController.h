@@ -13,5 +13,6 @@
 
 @property (strong, nonatomic) Pet *current_pet;
 
+@property (weak, nonatomic) IBOutlet UIImageView *donateLogoView;
 
 @end

@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 /*
- Controller of the last step in order to make an appointment : contains the field to keep user phone and email and the send button
+ Controller of the last step in order to make an appointment : contains the field to keep user name, phone and email and the save button
 */
 @interface UserEmailPhoneViewController : UIViewController
 
@@ -19,8 +19,13 @@
 @property (strong, nonatomic) Appointment *current_app;
 
 //Fields
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberField;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+
+//design
+@property (weak, nonatomic) IBOutlet UIImageView *logoAppView;
 
 /* ------ Methods of class --------*/
 

@@ -21,7 +21,13 @@
 
 //Labels
 @property (weak, nonatomic) IBOutlet UILabel *nextLabel;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (weak, nonatomic) IBOutlet UIButton *viewMoreButton;
+@property (weak, nonatomic) IBOutlet UIButton *donateButton;
+@property (weak, nonatomic) IBOutlet UIButton *adoptButton;
+@property (weak, nonatomic) IBOutlet UIImageView *logoAppView;
+@property (weak, nonatomic) IBOutlet UIImageView *countNextView;
+@property (weak, nonatomic) IBOutlet UIImageView *timesView;
 
 //url of the video currently played when the view is loaded
 @property (strong, nonatomic) NSURL *url_play;
@@ -37,6 +43,8 @@
 
 //Allows us to make the difference between the end of a video when the user has waited too much than a next action
 @property (nonatomic) BOOL state; //0 means end of video, 1 means Next, 2 means others Videos
+
+
 
 
 /* ------ Methods of class --------*/

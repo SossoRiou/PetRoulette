@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 IGPROJ-MAC01. All rights reserved.
 //
 
+#import "UserEmailPhoneViewController.h"
 #import "Appointment.h"
 #import <UIKit/UIKit.h>
 
@@ -20,13 +21,13 @@
 //Allows the user to choose a date
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
-//Label
-@property (weak, nonatomic) IBOutlet UILabel *requestedDateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *okButton;
 
 //Appointment where the date must be added
 @property (strong, nonatomic) Appointment * current_appointment;
 
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
+@property (weak, nonatomic) IBOutlet UIImageView *adoptLogoView;
 
 /* ------ Methods of class --------*/
 

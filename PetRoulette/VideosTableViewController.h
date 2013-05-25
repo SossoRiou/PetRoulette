@@ -33,4 +33,14 @@
  */
 -(NSString*)convertYouTubeURLToGoodFormat:(NSString*)urlTarget;
 
+/*
+ We can have some url such as http://www.youtube.com/embed/p8mzlHiFDA0 or such as http://www.youtube.com/watch?v=p8mzlHiFDA0
+ Allows us have the image of the video
+ URL pour voir la premiere image d'une video
+ http://img.youtube.com/vi/FMVVDm1mwvM/0.jpg
+ @param urlTarget is the URL String we want to transform
+ @return a String with watch instead of embed
+ */
+-(NSString*)convertYouTubeURLToImageYouTubeURL:(NSString*)urlTarget;
+
 @end

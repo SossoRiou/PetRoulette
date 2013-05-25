@@ -48,14 +48,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.adoptLogoView setContentMode:UIViewContentModeScaleAspectFit];
+    self.adoptLogoView.image = [UIImage imageNamed:@"adopt_transparent.png"];
+    
+    [self.designView setContentMode:UIViewContentModeScaleAspectFit];
+    self.designView.image = [UIImage imageNamed:@"Shelter_Logo-color.jpg"];
+    
+    [[self.dateButton imageView] setContentMode:UIViewContentModeScaleAspectFit];
+    [self.dateButton setBackgroundImage:[UIImage imageNamed:@"select_a_date.PNG"] forState:UIControlStateNormal];
         
     if (self.current_pet){ //the current pet must have been initialized with the former controller
         
         //Labels gets their contents
+        self.presentationLabel.text = [NSString stringWithFormat: @"You can adopt %@",self.current_pet.pet_name];
         self.shelterNameLabel.text = self.current_pet.shelter_name;
         self.shelterAddressLabel.text = self.current_pet.shelter_address;
         self.shelterPhoneNumberLabel.text = self.current_pet.shelter_phoneNumber;
-        self.presentationLabel.text = [NSString stringWithFormat:@"You want %@? You can adopt it!", self.current_pet.pet_name];
     }
     else{
         NSLog(@"There is a problem, there is no pet to adopt here !");

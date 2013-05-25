@@ -39,9 +39,7 @@
     if (self.currentPet){
         
         //Labels get their contents
-        self.nextLabel.text = [NSString stringWithFormat:@"Nexted %lu time", (unsigned long)self.currentPet.pet_nextCount];
-        self.nameLabel.text = self.currentPet.pet_name;
-        [self.nameLabel setHidden:false];
+        self.nextLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.currentPet.pet_nextCount];
 
         //Transform the url of the current pet if needed
         NSString *url_final = [self convertYouTubeURLToGoodFormat:petParser.current_pet.pet_currentVideo.video_url];
@@ -59,9 +57,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     
-    //Labels get their contents
-    [self.nameLabel setHidden:true];
+     //Seeting up the background picture and buttons design
+     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"screecccn.jpg"]];
+     self.controller.view.backgroundColor = background;
+     
+    [self.logoAppView setContentMode:UIViewContentModeScaleAspectFit];
+    self.logoAppView.image = [UIImage imageNamed:@"logo_transparent.png"];
+    
+    [self.countNextView setContentMode:UIViewContentModeScaleAspectFit];
+    self.countNextView.image = [UIImage imageNamed:@"this_pet_has_been_nexted.PNG"];
+    
+    [self.timesView setContentMode:UIViewContentModeScaleAspectFit];
+    self.timesView.image = [UIImage imageNamed:@"times.PNG"];
+    
+    [[self.nextButton imageView] setContentMode:UIViewContentModeScaleAspectFit];
+    [self.nextButton setBackgroundImage:[UIImage imageNamed:@"next_transparent.png"] forState:UIControlStateNormal];
+    
+    [[self.viewMoreButton imageView] setContentMode:UIViewContentModeScaleAspectFit];
+      [self.viewMoreButton setBackgroundImage:[UIImage imageNamed:@"view_more.png"] forState:UIControlStateNormal];
+    
+    [[self.donateButton imageView] setContentMode:UIViewContentModeScaleAspectFit];
+     [self.donateButton setBackgroundImage:[UIImage imageNamed:@"donate.png"] forState:UIControlStateNormal];
+    
+    
+    [[self.adoptButton imageView] setContentMode:UIViewContentModeScaleAspectFit];
+     [self.adoptButton setBackgroundImage:[UIImage imageNamed:@"adopt_transparent.png"] forState:UIControlStateNormal];
+    
   
     if (!self.controller) {
         
@@ -69,10 +92,10 @@
         self.controller = [[LBYouTubePlayerController alloc] initWithQuality:LBYouTubeVideoQualityLarge];
         
         //Initialization of good view size
-        CGFloat size = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? 250 : 500;
+        CGFloat size = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? 200 : 300;
         CGRect videoRect = CGRectMake(0, 0, size, size);
         self.controller.view.frame = videoRect;
-   
+         
         //link the view to the controller view
         [self.videoView addSubview:self.controller.view];
         
@@ -102,9 +125,7 @@
     [self.controller loadAndPlayVideoAtUrl:self.url_play andQuality:LBYouTubeVideoQualityLarge];
     
     //Labels get their contents
-    self.nextLabel.text = [NSString stringWithFormat:@"Nexted %lu time", (unsigned long)self.currentPet.pet_nextCount];
-    self.nameLabel.text = self.currentPet.pet_name;
-    [self.nameLabel setHidden:false];
+    self.nextLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.currentPet.pet_nextCount];
 }
 
 /*
@@ -121,9 +142,7 @@
     
     
     //Labels get their contents
-    self.nextLabel.text = [NSString stringWithFormat:@"Nexted %lu time", (unsigned long)self.currentPet.pet_nextCount];
-    self.nameLabel.text = self.currentPet.pet_name;
-    [self.nameLabel setHidden:false];
+    self.nextLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.currentPet.pet_nextCount];
         
     /*Really short video -> for test
      NSURL *youTubeURL = [NSURL URLWithString:@"http://www.youtube.com/watch?v=wXw6znXPfy4"];

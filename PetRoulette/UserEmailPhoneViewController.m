@@ -32,6 +32,14 @@
 {
     [super viewDidLoad];
     
+    //Set up design
+    [self.logoAppView setContentMode:UIViewContentModeScaleAspectFit];
+    self.logoAppView.image = [UIImage imageNamed:@"logo_transparent.png"];
+    
+    [[self.saveButton imageView] setContentMode:UIViewContentModeScaleAspectFit];
+    [self.saveButton setBackgroundImage:[UIImage imageNamed:@"save_yellow.PNG"] forState:UIControlStateNormal];
+    
+    
     if (!self.current_app){
         NSLog(@"There is a problem, there is no appointment initialized !");
         // Pop-up
@@ -53,6 +61,15 @@
  */
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
+    
+    if (textField == self.nameField){
+        
+        //keyboard off
+        [textField resignFirstResponder];
+        if (textField.text){
+            self.current_app.user_name = self.nameField.text;
+        }
+    }
     if (textField == self.emailField) { //we get the email
         
         //keyboard off

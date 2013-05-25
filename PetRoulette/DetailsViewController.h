@@ -23,6 +23,7 @@
 
 
 //Labels
+@property (weak, nonatomic) IBOutlet UIImageView *viewMoreLogoView;
 @property (weak, nonatomic) IBOutlet UILabel *petNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *speciesNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *raceLabel;
@@ -30,6 +31,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *availableUntilLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberVideosLabel;
+@property (weak, nonatomic) IBOutlet UIButton *adoptButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *othersVideosButton;
 
 /* ------ Methods of class --------*/
 

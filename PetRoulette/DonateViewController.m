@@ -30,7 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    //Set up design
+    [self.donateLogoView setContentMode:UIViewContentModeScaleAspectFit];
+    self.donateLogoView.image = [UIImage imageNamed:@"donate.png"];
 }
 
 - (void)didReceiveMemoryWarning

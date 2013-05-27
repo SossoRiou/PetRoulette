@@ -49,6 +49,7 @@
         //We load and play the video associated to the new pet selected
        [self.controller loadAndPlayVideoAtUrl:self.url_play andQuality:LBYouTubeVideoQualityLarge];
     }
+    self.state = 0;
 }
 
 /*
@@ -94,6 +95,10 @@
         //Initialization of good view size
         CGFloat size = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? 200 : 300;
         CGRect videoRect = CGRectMake(0, 0, size, size);
+        
+        self.controller.delegate = self.controller;
+    
+        
         self.controller.view.frame = videoRect;
          
         //link the view to the controller view
@@ -126,6 +131,8 @@
     
     //Labels get their contents
     self.nextLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.currentPet.pet_nextCount];
+    
+    self.state = 0;
 }
 
 /*
@@ -155,6 +162,8 @@
    
     //load and play the video from the url of the main video
     [self.controller loadAndPlayVideoAtUrl:self.url_play andQuality:LBYouTubeVideoQualityLarge];
+    
+    self.state = 0;
 }
 
 /*

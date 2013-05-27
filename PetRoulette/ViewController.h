@@ -15,7 +15,7 @@
  Is composed by a video and next, adopt, donate button
  @author Solene Riou
  */
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <LBYouTubePlayerControllerDelegate>
 
 /* ------ Parameters of class --------*/
 

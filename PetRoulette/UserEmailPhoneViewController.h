@@ -54,6 +54,11 @@
  */
 -(NSString*)connectAndSave_Appointment;
 
+/*
+ Method called when user begin editing in a field
+ Allow us to move up the view and see what we write when the keyboard is up
+ @param textField is the field concerned
+ */
 -(IBAction)textFieldBeginEdit:(UITextField*)textField;
 
 

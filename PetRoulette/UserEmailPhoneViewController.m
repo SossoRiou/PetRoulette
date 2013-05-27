@@ -25,13 +25,25 @@
     return self;
 }
 
+//method call when view did appear
 -(void)viewDidAppear:(BOOL)animated{
+    
+    //Initialize scrollView size
     [self.scrollView setScrollEnabled:YES];
     [self.scrollView setContentSize:CGSizeMake(320, 460)];
 }
 
+/*
+ Method called when user begin editing in a field
+ Allow us to move up the view and see what we write when the keyboard is up
+ @param textField is the field concerned
+ */
 -(IBAction)textFieldBeginEdit:(UITextField*)textField{
+    
+    //Srcoll view get bigger
     [self.scrollView setContentSize:CGSizeMake(320, 560)];
+    
+    //set up point
     CGRect textFieldSize = textField.bounds;
     textFieldSize = [textField convertRect:textFieldSize fromView:self.scrollView];
     CGPoint point = textFieldSize.origin;
@@ -69,7 +81,6 @@
                               otherButtonTitles:nil];
         [alert show];
     }
-
 }
 
 /*
@@ -138,7 +149,9 @@
         if ([self.current_app saveAppointment]){ //we can post it
             
             //API call : post Appointment
-            if([[self connectAndSave_Appointment] isEqualToString:@"False"]){//A CHANGER !!!!!!!!!!!!!!!!!//The post has succeeded :
+            if([[self connectAndSave_Appointment] isEqualToString:@"False"]){//MUST CHANGE TO "True" !!!!!!!!!!!!!!!!!
+                
+                //The post has succeeded :
                 // Pop-up
                 UIAlertView *alert = [[UIAlertView alloc]
                                       initWithTitle: @"CONGRATULATIONS"
@@ -150,16 +163,32 @@
                 
                 //Do we exit? Otherwise we'll be able to post twice the same appointment
             }
-            else{ //else : the call has failed
-                NSLog(@"We should manage to save the appointment but we can't!!");
+            else if([[self connectAndSave_Appointment] isEqualToString:@"Fail"]){ //the call has failed because of missing details
+               
+                NSLog(@"The appointment has failed, something is missing!!");
                 // Pop-up
                 UIAlertView *alert = [[UIAlertView alloc]
                                       initWithTitle: @"SORRY"
-                                      message: [NSString stringWithFormat:@"We should manage to save the appointment but we can't!!"]
+                                      message: [NSString stringWithFormat:@"We should manage to save the appointment but we can't!! Something is missing !"]
                                       delegate: self
                                       cancelButtonTitle:@"Cancel"
                                       otherButtonTitles:nil];
                 [alert show];
+            }
+            else if ([[self connectAndSave_Appointment] isEqualToString:@"False"]){ 
+                
+                //WHEN APPOINTMENT IS DONE WE MUST LET THIS FOLLOWING PART
+                /*
+                NSLog(@"The appointment has been refused");
+                // Pop-up
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle: @"SORRY"
+                                      message: [NSString stringWithFormat:@"The appointment has been refused"]
+                                      delegate: self
+                                      cancelButtonTitle:@"Cancel"
+                                      otherButtonTitles:nil];
+                [alert show];
+                */
             }
         }
         else{ // Missing details

@@ -25,6 +25,23 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [self.scrollView setScrollEnabled:YES];
+    [self.scrollView setContentSize:CGSizeMake(320, 460)];
+}
+
+-(IBAction)textFieldBeginEdit:(UITextField*)textField{
+    [self.scrollView setContentSize:CGSizeMake(320, 560)];
+    CGRect textFieldSize = textField.bounds;
+    textFieldSize = [textField convertRect:textFieldSize fromView:self.scrollView];
+    CGPoint point = textFieldSize.origin;
+    point.y = -point.y -40;
+    point.x = 0;
+    [self.scrollView setContentOffset:point animated:YES];
+}
+
+
+
 /*
  Method called when the view is loaded
  */
@@ -32,6 +49,7 @@
 {
     [super viewDidLoad];
     
+        
     //Set up design
     [self.logoAppView setContentMode:UIViewContentModeScaleAspectFit];
     self.logoAppView.image = [UIImage imageNamed:@"logo_transparent.png"];
@@ -61,6 +79,7 @@
  */
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
+    [self.scrollView setContentSize:CGSizeMake(320, 460)];
     
     if (textField == self.nameField){
         

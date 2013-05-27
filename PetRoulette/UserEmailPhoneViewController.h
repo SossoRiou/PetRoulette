@@ -26,6 +26,7 @@
 
 //design
 @property (weak, nonatomic) IBOutlet UIImageView *logoAppView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 /* ------ Methods of class --------*/
 
@@ -52,6 +53,9 @@
  Allows us to create the Generic Parser and to connect the API
  */
 -(NSString*)connectAndSave_Appointment;
+
+-(IBAction)textFieldBeginEdit:(UITextField*)textField;
+
 
 
 @end
